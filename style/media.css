@@ -1,0 +1,79 @@
+
+  @media only screen and (max-width:1260px){ 
+    nav{
+      display: none;
+    }
+    .menuBtn{
+      display: flex;
+      top: 0;
+      margin-top: 3%;
+    }
+     nav.popUp{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items:center;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      padding-top: 2%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 45vw;
+      animation-duration: 0.55s;  /* Время работы анимации */
+      animation-fill-mode: both;  /* Поведение анимации */
+      animation-name: fadeInDown;/* Имя анимации */
+    } 
+    nav ul{
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+    nav ul a{
+      display: flex;
+      padding-top: 20px;
+    }
+    
+    header .header-up button{
+      margin-right: 40%;
+    }
+   
+    @keyframes fadeInDown { /* Сама анимация */
+      0% {                /* Старт анимации */
+          opacity: 0;
+          transform: translate3d(100%, 0px, 0px);
+      }
+      100% {              /* в финале анимации - финал это заданная 0.55s */
+          opacity: 1;
+          transform: none;
+      }
+    }
+  }
+  
+  @media only screen and (max-width:992px){
+    
+  }
+
+
+
+
+  @media only screen and (max-width:768px){ /*-------ГОТОВО-------*/
+   
+
+  }
+
+
+
+  /* МОБИЛКА*/
+  @media only screen and (max-width:570px){  
+   
+  }
+  @media only screen and (max-width:400px){
+    
+  }
+  @media only screen and (max-width:320px){
+   
+  }
+  
