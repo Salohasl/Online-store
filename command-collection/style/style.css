@@ -310,18 +310,146 @@ main .merch .merch-line .merch-line__bottomRight span:nth-of-type(2) {
   align-items: flex-start;
   justify-content: flex-start;
 }
+.catalogy .filter-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.catalogy .filter-btn .filter-btn__span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  gap: 15px;
+  margin-top: -20px;
+}
+.catalogy .filter-btn .filter-btn__span .circle {
+  background-color: black;
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+}
+.catalogy .filter-btn p {
+  font-weight: bold;
+  transform: rotate(180deg);
+}
 .catalogy .filter {
-  height: 600px;
+  display: none;
+  height: 1000px;
   border-left: 300px solid rgba(0, 0, 0, 0.8);
   border-right: 50px solid transparent;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
 }
-.catalogy .filter .g {
+.catalogy .filter .setting {
   margin-left: -300px;
+  padding: 40px;
+  width: 350px;
+}
+.catalogy .filter .setting .size {
+  color: white;
+}
+.catalogy .filter .setting .size .size-btn {
+  margin-top: 10px;
+}
+.catalogy .filter .setting .size button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 2px;
+  margin-left: 0px;
+}
+.catalogy .filter .setting .size button:hover {
+  box-shadow: 1px 1px 15px black;
+}
+.catalogy .filter .setting .size button.click {
+  box-shadow: 1px 1px 15px black;
+}
+.catalogy .filter .setting .catal {
+  margin-top: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.catalogy .filter .setting .catal .catal-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.catalogy .filter .setting .catal .catal-radio .catal-radio__block label, .catalogy .filter .setting .catal .catal-radio .catal-radio__block input {
+  cursor: pointer;
+}
+.catalogy .filter .setting .catal .catal-radio .catal-radio__block input {
+  position: relative;
+  height: 12px;
+  width: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+.catalogy .filter .setting .catal .catal-radio .catal-radio__block input::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+}
+.catalogy .filter .setting .catal .catal-radio .catal-radio__block input:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  visibility: visible;
+}
+.catalogy .filter.active {
+  display: flex;
 }
 .catalogy .product {
   margin-left: 20%;
+}
+
+.catal-radio__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -70px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.catal-radio__btn .catal-radio__btn-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+.catal-radio__btn .circle {
+  background-color: #FFCF00;
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
 }
 
 .footer {

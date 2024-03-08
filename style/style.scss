@@ -325,7 +325,7 @@ main{
 }
 
 .timer{
-  background-image: url(/img/fonRace.png);
+  background-image: url(/img/fonR.png);
   background-repeat: no-repeat;
   background-size: cover;
   
@@ -386,17 +386,18 @@ main{
 
 .fon{
   z-index: 1;
- 
+  background-color: rgba(0, 0, 0, 0.9);
   width: 100%;
-  height: 170px;
-  transform: skewY(2deg);
-  margin-top: -5%;
+  height: 100px;
+  transform: skewY(-2deg);
+  margin-top: -1.5px;
+  margin-bottom: -100px;
 }
 
 .track{
-  margin-top: -5%;
+  margin-top: 5%;
   .swiper {
-    width: 100%;
+    width: 1300px;
     height: 100%;
 
   }
@@ -462,15 +463,16 @@ main{
     background-image: url(/img/чб.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
+    background-position: center;
+ 
     .swiper {
-      width: 100%;
+      width: 1330px;
       height: 100%;
       
     }
     
     .swiper-slide {
-      margin-bottom: 12%;
+      margin-bottom: 15%;
       text-align: center;
       display: flex !important;
       flex-direction: row;
