@@ -6,14 +6,13 @@
 <meta name="HandheldFriendly" content="true" >
 <meta name="MobileOptimized" content="width">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Формула 1</title>
+<title>КОЛЛЕКЦИЯ Команд</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="icon" href="/icon/logo.png" type="image/svg+xml">
 <link rel="stylesheet" href="/piloе-collection/style/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
@@ -26,10 +25,10 @@
  
   <nav>
     <ul>
-      <a href="#" onclick="popupText()"><li>Каталог</li></a>
+      <a href="/catalogy/index.html" onmouseover="popupText()"><li>Каталог</li></a>
       <div class="link">
-        <a href="#">-Мужское</a>
-        <a href="#">-Женское</a>
+        <a href="/catalogy/man-collection/index.html">-Мужское</a>
+        <a href="/catalogy/women-collection/index.html">-Женское</a>
         <a href="#">-Детское</a>
         <a href="#">-Для дома</a>
         <a href="#">-Аксессуары</a>
@@ -61,7 +60,7 @@
       <div class="merch-link">
         <ul>
           <a href="/index.html"><li>Главная </li></a>
-          <a href="/piloе-collection/index.html"><li>/ Коллекция пилотов</li></a>
+          <a href="/command-collection/index.html"><li>/ Коллекция команд</li></a>
         </ul>
       </div>
 
@@ -82,7 +81,7 @@
           <h1>Ландо Норрис</h1>
         </div>
         <div class="img">
-          <img src="/img/Subtract.png" alt="photo">
+          <img src="/img/londo.png" alt="photo">
         </div>
       </div>
 
@@ -99,6 +98,161 @@
 
     </div>
 
+    <div class="catalogy">
+        <div class="filter-btn" id="filter-btn" onclick="showFilter()">
+          <div class="filter-btn__span">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+          <p>фильтры</p>
+        </div>
+        <div class="filter" id="filter">
+            <div class="setting">
+              <div class="size">
+                <p>Размеры</p>
+                <div class="size-btn">
+                  <button class="sizeBtn">XS</button>
+                  <button class="sizeBtn">S</button>
+                  <button class="sizeBtn">M</button>
+                  <button class="sizeBtn">L</button>
+                  <button class="sizeBtn">XL</button>
+                  <button class="sizeBtn">2XL</button>
+                  <button class="sizeBtn">3XL</button>
+                  <button class="sizeBtn">4XL</button>
+                  <button class="sizeBtn">5XL</button>
+                  <button class="sizeBtn">6XL</button>
+                </div>
+              </div>
+              <div class="catal">
+                <p>Каталог</p>
+                <div class="catal-radio">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="1">
+                    <label for="1">Головные уборы</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="2">
+                    <label for="2">Худи</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="3">
+                    <label for="3">Аксессуары</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="4">
+                    <label for="4">Куртки</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="5">
+                    <label for="5">Шорты</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="1" id="6">
+                    <label for="6">Обувь</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="catal">
+                <p>Коллекция команд</p>
+                <div class="catal-radio">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com1">
+                    <label for="com1">Mercedes</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com2">
+                    <label for="com2">Alpine</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com3">
+                    <label for="com3">Haas</label>
+                  </div>
+                  <div class="catal-radio__btn" id="command">
+                    <p>Смотреть больше</p>
+                    <div class="catal-radio__btn-block">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                  <div class="display" style="display: none;">
+                    <div class="catal-radio__block">
+                      <input type="radio" name="com1" id="com4">
+                      <label for="com4">Не известно</label>
+                    </div>
+                    <div class="catal-radio__block">
+                      <input type="radio" name="com1" id="com5">
+                      <label for="com5">Не известно</label>
+                    </div>
+                    <div class="catal-radio__block">
+                      <input type="radio" name="com1" id="com6">
+                      <label for="com6">Не известно</label>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="catal">
+                <p>Коллекция пилотов</p>
+                <div class="catal-radio">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil1">
+                    <label for="pil1">Max Verstappen</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil2">
+                    <label for="pil2">Sargeant Logan</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil3">
+                    <label for="pil3">Daniel Ricciardo</label>
+                  </div>
+                    <div class="catal-radio__block">
+                      <input type="radio" name="pil1" id="pil4">
+                      <label for="pil4">Sargeant Logan</label>
+                    </div>
+                    <div class="catal-radio__block">
+                      <input type="radio" name="pil1" id="pil5" checked>
+                      <label for="pil5">Lando Norris</label>
+                    </div>
+                    <div class="catal-radio__btn" id="pilots">
+                      <p>Смотреть больше</p>
+                      <div class="catal-radio__btn-block">
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  <div class="display" id="pilot" style="display: none;">
+                    <div class="catal-radio__block">
+                      <input type="radio" name="pil1" id="pil6">
+                      <label for="pil6">Daniel Ricciardo</label>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="apply">
+                <button>Применить</button>
+                <div class="reset" id="reset">
+                  <p>Сбросить</p>
+                  <div class="reset-block">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="product">
+            каталог
+        </div>
+    </div>
     
 
 
@@ -160,10 +314,8 @@
     });
 
   </script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="/script/swiper.js"></script>
-<script src="/script/timer.js"></script>
 <script src="/script/up.js"></script>
+<script src="/script/showFilter.js"></script>
 </body>
 </html>
 

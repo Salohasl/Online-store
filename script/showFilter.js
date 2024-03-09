@@ -19,10 +19,25 @@ function shadowButton(){
 
     const catalRadioBtn = document.querySelector('.catal-radio__btn');
     const display = document.querySelector('.display');
+    const pilot = document.querySelector('#pilot');
 
     catalRadioBtn.addEventListener('click', ()=>{
         display.style.display = 'block';
         catalRadioBtn.style.display = 'none';
+    })
+
+    const pilotBtn = document.getElementById('pilots');
+
+    pilotBtn.addEventListener('click', ()=>{
+        pilot.style.display = 'block';
+        pilotBtn.style.display = 'none';
+    })
+
+
+    const reset = document.getElementById('reset');
+    reset.addEventListener('click', ()=>{
+        filter.classList.remove('active');
+        document.getElementById('filter-btn').style.display = 'flex';
     })
 }
 shadowButton();

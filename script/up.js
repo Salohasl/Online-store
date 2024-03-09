@@ -8,6 +8,7 @@ menu.classList.toggle('popUp');
 link.classList.remove('active');
 });
 
+
 function popupText(){
-    link.classList.toggle('active');
+    link.classList.add('active');
 }
