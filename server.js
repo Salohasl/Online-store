@@ -1,31 +1,54 @@
-const express = require('express');
 const mongoose = require('mongoose');
-
-// Подключение к MongoDB
-mongoose.connect('mongodb://localhost:27017/catalog', { useNewUrlParser: true, useUnifiedTopology: true });
-
+const express = require('express');
 const app = express();
+require('dotenv').config()
 
-// Создаем схему и модель данных для коллекции в MongoDB
-const dataSchema = new mongoose.Schema({
-    name: String,
-    age: Number
+// для парсинга json
+app.use(express.json());
+// для парсинга x-www-form-urlencoded
+app.use(express.urlencoded({extended:true}));
+//Путь к папке с картинками
+app.use("/static", express.static(__dirname + "/assetc"))
+
+app.use('/api/img', require('./db/img'))
+
+
+mongoose.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Запуск сервера на порту 3000
+app.listen(3000, () => {
+    console.log('Сервер запущен на порту 3000');
 });
 
-const Data = mongoose.model('Data', dataSchema);
+/*
+// Подключение к MongoDB
+mongoose.connect('mongodb://localhost/catalog', { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Маршрут для загрузки данных на страницу
+// Определение схемы для каталога товаров
+const ProductSchema = new mongoose.Schema({
+    name: String,
+    price: Number,
+    description: String
+});
+
+const Product = mongoose.model('Product', ProductSchema);
+
 app.get('/', async (req, res) => {
     try {
-        const data = await Data.find();
-        res.send(data);
+        // Получение списка товаров из каталога
+        const products = await Product.find({});
+
+        // Отправка списка товаров на страницу
+        res.send(products);
     } catch (err) {
         console.error(err);
-        res.status(500).send('Произошла ошибка');
+        res.status(500).send('Произошла ошибка при загрузке каталога товаров');
     }
 });
 
-// Слушаем порт
+// Запуск сервера на порту 3000
 app.listen(3000, () => {
-    console.log('Сервер запущен на порте 3000');
+    console.log('Сервер запущен на порту 3000');
 });
+
+*/

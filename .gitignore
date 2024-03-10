@@ -3,3 +3,4 @@ feedback/logs/
 .end/
 doc/**/*.txt
 /db/*.sqlite3
+db/

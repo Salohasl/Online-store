@@ -215,14 +215,32 @@
               </div>
             </div>
         </div>
-        <div class="product">
-            каталог
+        <div class="wrapper">
+          <div class="product" id="paginated-list" data-current-page="1" aria-live="polite">
+
+            <div class="product-catal list" id="list">
+
+            </div>
+
+          </div>
+    
+          <nav class="pagination-container" id="pag-cont">
+            <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+              &lt;
+            </button>
+        
+            <div id="pagination-numbers">
+        
+            </div>
+        
+            <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+              &gt;
+            </button>
+          </nav>
         </div>
+
     </div>
-    
-
-
-    
+ 
   </main>
   
   <footer class="footer">
@@ -280,6 +298,7 @@
     });
 
   </script>
+<script src="/script/pagination.js"></script>
 <script src="/script/up.js"></script>
 <script src="/script/showFilter.js"></script>
 </body>
