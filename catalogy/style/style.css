@@ -204,7 +204,7 @@ main .merch-link ul a:hover {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .catalogy .filter-btn {
   display: flex;
@@ -242,6 +242,7 @@ main .merch-link ul a:hover {
   border-bottom: 50px solid transparent;
   -webkit-animation: show 0.5s linear;
           animation: show 0.5s linear;
+  margin-right: -100px;
 }
 .catalogy .filter .setting {
   margin-left: -300px;
@@ -323,15 +324,56 @@ main .merch-link ul a:hover {
   display: flex;
 }
 .catalogy .product {
-  margin-right: 300px;
+  margin-top: -20px;
+  margin-right: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  transition: 1s;
 }
-.catalogy .product .product-catal.hidden {
+
+.product-catal {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  cursor: pointer;
+  -webkit-animation: showDisplay 0.5s linear;
+          animation: showDisplay 0.5s linear;
+}
+.product-catal.hidden {
   display: none;
+}
+.product-catal img {
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-catal h4 {
+  border-top: 1px solid black;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: 500;
+}
+.product-catal .product-price {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  position: relative;
+}
+.product-catal p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-catal p:nth-of-type(1) {
+  width: 120px;
+}
+.product-catal p:nth-of-type(2) {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
 }
 
 .catal-radio__btn {
