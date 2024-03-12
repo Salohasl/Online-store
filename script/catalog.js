@@ -4,18 +4,51 @@ import catalogAston from './arrCatalog.js';
 //В переменной хранится каталог
 let productAston  = catalogAston;
 
-//console.log(productAston);
 const product = document.querySelector('.product');
+
+//Для фильтрации каталога
+const applyBtn = document.querySelector('.applyBtn');
+const radio = document.querySelectorAll('.cloth');
+
+//Сброс всех настроек в фильтре
+const resetBtn = document.querySelector('.reset');
+resetBtn.addEventListener('click', ()=>{
+  location.reload();
+})
+
 
 //Функция выгрузки товара
 function productUnloading(){
     for(let key of productAston){
 
-        let productCatal = document.createElement('div');
-        productCatal.classList.add('product-catal');
-        productCatal.classList.add('list');
-        product.append(productCatal);
-        
+      let productCatal = document.createElement('div');
+      productCatal.classList.add('product-catal');
+      productCatal.setAttribute('data-category', key.category);
+      product.append(productCatal);
+
+
+      
+      //Создание массива для категорий одежды
+      let res = [];
+      res.push(productCatal.dataset.category)
+      
+      //Настройка филтрации одежды по radio
+      radio.forEach(elem => {
+        elem.addEventListener('click', ()=>{
+          console.log(elem.value);
+          //При нажатии на применять сработает скрипт
+          applyBtn.addEventListener('click', ()=>{
+            if(!(res == elem.value)){
+              productCatal.length == res;
+              productCatal.style.display = 'none';
+            }else{
+              productCatal.style.display = 'block';
+            }    
+          })
+        })
+      })
+      
+
         let img = document.createElement('img');
         img.src = key.src;
         productCatal.append(img);
@@ -37,18 +70,23 @@ function productUnloading(){
         let price = document.createElement('p');
         price.textContent = key.price;
         productPrice.append(price);
+
     }
+
 }
 productUnloading();
 
+
+
+
 //Функция пагинация 
 function pagination(){
-const paginationNumbers = document.getElementById("pagination-numbers");
-const paginatedList = document.getElementById("paginated-list");
-const listItems = paginatedList.querySelectorAll(".list");
-const nextButton = document.getElementById("next-button");
-const prevButton = document.getElementById("prev-button");
-  
+  const paginationNumbers = document.getElementById("pagination-numbers");
+  const paginatedList = document.getElementById("paginated-list");
+  const listItems = paginatedList.querySelectorAll(".product-catal");
+  const nextButton = document.getElementById("next-button");
+  const prevButton = document.getElementById("prev-button");
+
   const paginationLimit = 15;
   const pageCount = Math.ceil(listItems.length / paginationLimit);
   let currentPage = 1;

@@ -240,8 +240,8 @@ main .merch-link ul a:hover {
   border-right: 50px solid transparent;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  -webkit-animation: show 0.5s linear;
-          animation: show 0.5s linear;
+  -webkit-animation: show 0.3s linear;
+          animation: show 0.3s linear;
   margin-right: -100px;
 }
 .catalogy .filter .setting {
@@ -331,7 +331,6 @@ main .merch-link ul a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  transition: 1s;
 }
 
 .product-catal {

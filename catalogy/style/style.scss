@@ -193,6 +193,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+
     .filter-btn{
       display: flex;
       flex-direction: column-reverse;
@@ -228,7 +229,7 @@
         border-right: 50px solid transparent;
         border-top: 50px solid transparent;
         border-bottom: 50px solid transparent;
-        animation: show .5s linear;
+        animation: show .3s linear;
         margin-right: -100px;
         .setting{
             margin-left: -300px;
@@ -322,7 +323,6 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
-        transition: 1s;
     }
   }
 .product-catal{
