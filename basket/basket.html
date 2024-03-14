@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xml:lang="ru" lang="ru" class="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="HandheldFriendly" content="true" >
+<meta name="MobileOptimized" content="width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Корзина</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="icon" href="/icon/logo.png" type="image/svg+xml">
+<link rel="stylesheet" href="/basket/style/style.css">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<header>
+  <div class="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+ 
+  <nav>
+    <ul>
+      <a href="/catalogy/index.html"  onmouseover="popupText()"><li>Каталог</li></a>
+      <div class="link">
+        <a href="/catalogy/man-collection/index.html">-Мужское</a>
+        <a href="/catalogy/women-collection/index.html">-Женское</a>
+        <a href="/catalogy/kids-collection/index.html">-Детское</a>
+        <a href="#">-Для дома</a>
+        <a href="#">-Аксессуары</a>
+      </div>
+      <a href="/piloе-collection/index.html"><li>Коллекция пилотов</li></a>
+      <a href="/command-collection/index.html"><li>Коллекция команд</li></a>
+      <a href="#"><li>Спецпредложения</li></a>
+      <a href="/calendar/index.html"><li>Календарь гонок</li></a>
+      <a href="/personal/index.html"><li>Личные зачеты пилотов</li></a>
+      <a href="/cup/index.html"><li>Кубок конструкторов</li></a>
+      <a href="#"><li>FAQ</li></a>
+    </ul>
+  </nav>
+
+    <div class="link">
+      <input type="search" name="q" id="site-search" placeholder="Поиск">
+      <a href="/favorites/favorites.html"><button data-count="0"><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt" data-count="0"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
+    </div>
+
+    <div class="logo">
+      <a href="/index.html"><img src="/icon/logo.png" alt="logo"></a>
+    </div>
+</header>
+
+<body>
+  <main>
+    <div class="merch" id="up">
+        <div class="merch-link">
+          <ul>
+            <a href="/index.html"><li>Главная </li></a>
+            <a href="/catalogy/index.html"><li>/ Каталог</li></a>
+            <a href="/basket/basket.html"><li>/ Корзина</li></a>
+          </ul>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+      <div class="wrapper-basket">
+        <div class="basket">
+          <h2>Корзина</h2>
+          <table>
+            <tr>
+              <td>
+                <div class="close">
+                  <span></span>
+                  <span></span>
+                </div>
+                lorem
+              </td>
+              <td>
+                <span class="price">9999</span> р
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="payment">
+          <h3>Итого к оплате</h3>
+          <p><span class="payment-price">9999</span> р</p>
+        </div>
+        <div class="decor">
+          <a href="#">
+            Перейти к оформлению
+            <div class="decor-line">
+              <span></span>
+              <span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="recommen">
+        <h2>Рекомендуемое</h2>
+      </div>
+    </div>
+ 
+  </main>
+  
+  <footer class="footer">
+    <div class="container" id="containerFormUp"> 
+      <div class="form-container form__wrapper" id="form">
+        <!-- Форма обратной связи -->
+        <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" method="post" novalidate>
+              <h2>Подпишитесь на обновления коллекции</h2>
+              <div class="form-row">
+                <!-- Email пользователя -->
+                <div class="form-group">
+                  <input id="email" type="email" name="email" required="required" class="form-control" value=""
+                    placeholder="введите почту">
+                  <div class="invalid-feedback"></div>
+                </div>
+              
+                  <!-- Кнопка для отправки формы на сервер -->
+                  <div class="form-submit">
+                    <button id="buttonForm" type="submit">Подписаться</button>
+                  </div>
+                </div>
+        </form>
+      </div>
+  </div>
+  <div class="link">
+    <h2>мы в социальных сетях</h2>
+    <div class="link-icon">
+      <a href="#"><img src="/icon/teleg.png" alt=""></a>
+      <a href="#"><img src="/icon/insta.png" alt=""></a>
+      <a href="#"><img src="/icon/whatsapp.png" alt=""></a>
+    </div>
+  </div>
+  </footer>
+  <script src="/feedback/js/form-processing.js"></script>
+  <script>
+    /*
+      attachMaxItems: 3,
+      attachMaxFileSize: 128,
+      attachExt: ['png', 'jpg']
+    */
+
+    ItcSubmitForm.getOrCreateInstance('form');
+
+    document.addEventListener('itc.successSendForm', (e) => {
+      const el = e.target.closest('.form-container').querySelector('.form-success');
+      el.classList.remove('form-success_hide');
+    });
+
+    // при клике на .form-success__btn
+    document.querySelector('.form-success__btn').addEventListener('click', (e) => {
+      const el = e.target.closest('.form-container').querySelector('form');
+      const form = ItcSubmitForm.getOrCreateInstance(el);
+      form.reset();
+      e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
+    });
+
+  </script>
+
+
+<script src="/script/up.js"></script>
+<script src="/script/showFilter.js"></script>
+</body>
+</html>
+

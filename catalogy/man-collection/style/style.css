@@ -169,9 +169,26 @@ header .link input {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-header .link img {
-  margin-right: 20px;
+header .link .bt::before {
+  content: attr(data-count);
+  position: absolute;
+  color: white;
+  right: 19px;
+  top: -8px;
+}
+header .link button {
+  background-color: black;
+  border: none;
   cursor: pointer;
+  margin-left: 20px;
+  position: relative;
+}
+header .link button::before {
+  content: attr(data-count);
+  position: absolute;
+  color: white;
+  right: 19px;
+  top: 7px;
 }
 header .logo {
   display: flex;
@@ -240,8 +257,9 @@ main .merch-link ul a:hover {
   border-right: 50px solid transparent;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  -webkit-animation: show 0.5s linear;
-          animation: show 0.5s linear;
+  -webkit-animation: show 0.3s linear;
+          animation: show 0.3s linear;
+  margin-right: -100px;
 }
 .catalogy .filter .setting {
   margin-left: -300px;
@@ -323,7 +341,133 @@ main .merch-link ul a:hover {
   display: flex;
 }
 .catalogy .product {
-  margin-left: 20%;
+  margin-top: -20px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.product-catal {
+  margin: 20px;
+  width: 200px;
+  height: 300px;
+  cursor: pointer;
+  -webkit-animation: showDisplay 0.5s linear;
+          animation: showDisplay 0.5s linear;
+  position: relative;
+  transition: 0.5s;
+}
+.product-catal.hidden {
+  display: none;
+}
+.product-catal img {
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.product-catal h4 {
+  border-top: 1px solid black;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: 500;
+}
+.product-catal .product-price {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  position: relative;
+}
+.product-catal p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-catal p:nth-of-type(1) {
+  width: 120px;
+}
+.product-catal p:nth-of-type(2) {
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+}
+.product-catal:hover .product-hover {
+  display: flex;
+}
+
+.product-hover {
+  -webkit-animation: showDisplay 0.3s linear;
+          animation: showDisplay 0.3s linear;
+  z-index: 5;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: -10px;
+  width: 220px;
+  background-color: rgba(55, 55, 55, 0.97);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.product-hover img {
+  width: 90%;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.product-hover h4 {
+  border: none;
+  color: white;
+  margin-top: -5px;
+  margin-left: 10px;
+}
+.product-hover p {
+  color: white;
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 200;
+}
+.product-hover .button-block {
+  margin-left: 10px;
+  width: 70%;
+  margin-bottom: 15px;
+}
+.product-hover .button-block button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 3px;
+  margin: 2px;
+}
+.product-hover .button-block button:hover {
+  box-shadow: 1px 1px 15px black;
+}
+.product-hover .basket-hover {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0px;
+}
+.product-hover .basket-hover:hover {
+  filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
 }
 
 .catal-radio__btn {
@@ -501,4 +645,35 @@ main .merch-link ul a:hover {
   width: 40px;
   margin-top: 4%;
   margin-left: 10px;
+}
+
+.pagination-container {
+  width: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  padding: 1rem 0;
+  justify-content: center;
+}
+
+.pagination-number,
+.pagination-button {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.2rem;
+}
+
+.pagination-number:hover,
+.pagination-button:not(.disabled):hover {
+  background: #fff;
+}
+
+.pagination-number.active {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.9);
 }/*# sourceMappingURL=style.css.map */

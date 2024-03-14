@@ -104,6 +104,7 @@
         color: rgb(255,255,255, 0.5);
         font-weight: 300;
         font-size: 18px;
+        
       }
     }
   } 
@@ -153,9 +154,28 @@
         color: white;
         border: 1px solid rgb(255,255,255, 0.5);
       }
-      img{
-        margin-right: 20px;
+      .bt{
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: -8px;
+        }
+      }
+      button{
+        background-color: black;
+        border: none;
         cursor: pointer;
+        margin-left: 20px;
+        position: relative;
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: 7px;
+        }
       }
     }
     .logo{
@@ -323,6 +343,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-start;
+        position: relative;
     }
   }
 .product-catal{
@@ -337,6 +358,7 @@
   img{
     width: 200px;
     object-fit: cover;
+    border-radius: 10px;
   }
   h4{
     border-top: 1px solid black;
@@ -361,6 +383,81 @@
       font-weight: bold;
       position: absolute;
       right: 0;
+    }
+  }
+  position: relative;
+  transition: .5s;
+  &:hover{
+    .product-hover{
+      display: flex;
+    }
+  }
+}
+
+.product-hover{
+  animation: showDisplay  .3s linear;
+  z-index: 5;
+  display: none;
+  margin-top: -10px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: -10px;
+  width: 220px;
+  background-color: rgba(55, 55, 55, 0.97);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  img{
+    width: 90%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  h4{
+    border: none;
+    color: white;
+    margin-top: -5px;
+    margin-left: 10px;
+  }
+  p{
+    color: white;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 200;
+  }
+  .button-block{
+    margin-left: 10px;
+    width: 70%;
+    margin-bottom: 15px;
+    button{
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid white;
+      width: 25px;
+      height: 25px;
+      border-radius: 15px;
+      color: white;
+      cursor: pointer;
+      font-size: 10px;
+      padding: 3px;
+      margin: 2px;
+      &:hover{
+        box-shadow: 1px 1px 15px black;
+      }
+    }
+  }
+  .basket-hover{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 0px;
+    &:hover{
+      filter: drop-shadow(1px 1px 1px rgb(255,207,0));
     }
   }
 }

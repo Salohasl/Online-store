@@ -1,0 +1,402 @@
+*{
+    box-sizing: border-box;
+    font-family: inter;
+    margin: 0;
+  }
+  
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  
+  .menuBtn.active span:nth-of-type(1) {
+    display: none;
+  }
+  
+  .menuBtn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+  
+  .menuBtn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+  }
+  
+  .menuBtn {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    margin-left: 1%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  nav{
+    display: none;
+  }
+  .menuBtn span {
+    width: 34px;
+    height: 3px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    transition: all 0.5s;
+    border-radius: 2px;
+  }
+  
+  .menuBtn span:nth-of-type(2) {
+  
+    top: calc(35% - 5px);
+  }
+  
+  .menuBtn span:nth-of-type(3) {
+  
+    top: calc(60% + 5px);
+  }
+  nav.popUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    padding: 2%;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+    width: 450px;
+    height: 100vh;
+    animation-duration: 0.55s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: fadeInDown;/* Имя анимации */
+    ul{
+      line-height: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+        transition: .4s;
+        font-size: 22px;
+        &:hover{
+          color: #FFCF00;
+        }
+        &.active{
+            color: #FFCF00;
+        }
+      }
+    }
+    .link{
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 30px;
+      &.active{
+        display: flex;
+        animation-duration: 0.55s;  /* Время работы анимации */
+        animation-fill-mode: both;  /* Поведение анимации */
+        animation-name: fadeInDown;
+      }
+      a{
+        color: rgb(255,255,255, 0.5);
+        font-weight: 300;
+        font-size: 18px;
+      }
+    }
+  } 
+  
+  
+  @keyframes fadeInDown { /* Сама анимация */
+    0% {                /* Старт анимации */
+        opacity: 0;
+        transform: translate3d(-100%, 0px, 0px);
+    }
+    100% {              /* в финале анимации - финал это заданная 0.55s */
+        opacity: 1;
+        transform: none;
+    }
+  }
+  
+  header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(335deg, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 200;
+    .link{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      input{
+        background-color: black;
+        background-image: url(/icon/Group.png);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position:97%;
+        padding: 5px;
+        width: 420px;
+        height: 40px;
+        margin-right: 20px;
+        outline: none;
+        font-size: 22px;
+        color: white;
+        border: 1px solid rgb(255,255,255, 0.5);
+      }
+      .bt{
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: -8px;
+        }
+      }
+      button{
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        margin-left: 20px;
+        position: relative;
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: 7px;
+        }
+      }
+    }
+    .logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  main{
+    margin-top: 100px;
+      .merch-link{
+        ul{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          list-style-type: none;
+          a{
+            text-decoration: none;
+            color: rgba(51, 51, 51, 0.7);
+            margin-left: 5px;
+            z-index: 100;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+
+      .wrapper{
+        margin-left: 43px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        .wrapper-basket{
+          width: 100%;
+        }
+        .basket{
+          background-color: rgba(64, 64, 64, 1);
+          width: 100%;
+          margin-top: 12px;
+          
+          h2{
+            color: white;         
+            padding: 15px;
+            font-weight: 300;   
+          }
+          table{
+            width: 100%;
+            height: 100%;
+            
+            td{
+              width: 90%;
+              color: white;
+              border-top: 1px solid white;
+              text-align: center;
+              padding: 10px;
+              &:nth-of-type(2){
+                border-left: 1px solid white;
+              }
+              .close{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                cursor: pointer;
+                span{
+                  border: 1px solid white;
+                  height: 20px;
+                  &:nth-of-type(1){
+                    position: absolute;
+                    transform: rotate(45deg);
+                  }
+                  &:nth-of-type(2){
+                    position: absolute;
+                    transform: rotate(-45deg);
+                  }
+                }
+              }
+            }
+            .price{
+              color: white;
+              font-size: 20px;
+            }
+          }
+        }
+
+        .payment{
+          background-color: rgba(64, 64, 64, 1);
+          width: 100%;
+          margin-top: 12px;
+          padding: 15px;
+          color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          h3{
+            margin-left: 40px;
+            font-size: 25px;
+            font-weight: 300;
+          }
+          p{
+            font-size: 25px;
+            font-weight: 300;
+          }
+        }
+
+        .decor{
+          margin-top: 20px;
+          margin-left: 55px;
+          a{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            .decor-line{
+              width: 30px;
+              height: 30px;
+              position: relative;
+              cursor: pointer;
+              margin-left: 20px;
+              margin-top: 3px;
+              span{
+                border: 1px solid black;
+                height: 15px;
+                &:nth-of-type(1){
+                  position: absolute;
+                  transform: rotate(45deg);
+                  margin-top: 9px;
+                }
+                &:nth-of-type(2){
+          
+                  position: absolute;
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+          
+        }
+
+        .recommen{
+          margin-top: -40px;
+               height: 1200px;
+               border-right: 300px solid rgba(0, 0, 0, .8);
+               border-left: 50px solid transparent;
+               border-top: 50px solid transparent;
+               border-bottom: 50px solid transparent;
+          h2{
+            margin-right: -300px;
+            margin-left: 10px;
+            padding: 15px;
+            font-weight: 300;
+            color: white;
+          }
+        }
+      }
+  }
+
+  
+  
+  .footer{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 5%;
+    .container{
+      display: flex;
+      flex-direction: column;
+      .form-row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        button{
+          background-color: black;
+          border: 1px solid white;
+          color: white;
+          padding: 10px;
+          font-size: 17px;
+          cursor: pointer;
+        }
+        input{
+          background-color: black;
+          border: 1px solid white;
+          color: white;
+          padding: 10px;
+          font-size: 17px;
+          margin-right: 10px;
+        }
+      }
+      h2{
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-align: center;
+      }
+    }
+    .link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+      h2{
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+      }
+      img{
+        width: 40px;
+        margin-top: 4%;
+        margin-left: 10px;
+      }
+    }
+  }

@@ -166,9 +166,26 @@ header .link input {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-header .link img {
-  margin-right: 20px;
+header .link bt::before {
+  content: attr(data-count);
+  position: absolute;
+  color: white;
+  right: 19px;
+  top: -8px;
+}
+header .link button {
+  background-color: black;
+  border: none;
   cursor: pointer;
+  margin-left: 20px;
+  position: relative;
+}
+header .link button::before {
+  content: attr(data-count);
+  position: absolute;
+  color: white;
+  right: 19px;
+  top: 7px;
 }
 header .logo {
   display: flex;

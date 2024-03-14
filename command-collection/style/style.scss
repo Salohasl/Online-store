@@ -155,9 +155,28 @@
         color: white;
         border: 1px solid rgb(255,255,255, 0.5);
       }
-      img{
-        margin-right: 20px;
+      bt{
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: -8px;
+        }
+      }
+      button{
+        background-color: black;
+        border: none;
         cursor: pointer;
+        margin-left: 20px;
+        position: relative;
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: 7px;
+        }
       }
     }
     .logo{

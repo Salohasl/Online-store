@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xml:lang="ru" lang="ru" class="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<meta name="HandheldFriendly" content="true" >
+<meta name="MobileOptimized" content="width">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Детская коллекция</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="icon" href="/icon/logo.png" type="image/svg+xml">
+<link rel="stylesheet" href="/catalogy/kids-collection/style/style.css">
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<header>
+  <div class="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+ 
+  <nav>
+    <ul>
+      <a href="/catalogy/index.html" onmouseover="popupText()"><li>Каталог</li></a>
+      <div class="link">
+        <a href="/catalogy/man-collection/index.html">-Мужское</a>
+        <a href="/catalogy/women-collection/index.html" >-Женское</a>
+        <a href="/catalogy/kids-collection/index.html" class="active">-Детское</a>
+        <a href="#">-Для дома</a>
+        <a href="#">-Аксессуары</a>
+      </div>
+      <a href="/piloе-collection/index.html"><li>Коллекция пилотов</li></a>
+      <a href="/command-collection/index.html"><li>Коллекция команд</li></a>
+      <a href="#"><li>Спецпредложения</li></a>
+      <a href="/calendar/index.html"><li>Календарь гонок</li></a>
+      <a href="/personal/index.html"><li>Личные зачеты пилотов</li></a>
+      <a href="/cup/index.html"><li>Кубок конструкторов</li></a>
+      <a href="#"><li>FAQ</li></a>
+    </ul>
+  </nav>
+
+    <div class="link">
+      <input type="search" name="q" id="site-search" placeholder="Поиск">
+      <a href="/favorites/favorites.html"><button data-count="0"><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt" data-count="0"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
+    </div>
+
+    <div class="logo">
+      <a href="/index.html"><img src="/icon/logo.png" alt="logo"></a>
+    </div>
+</header>
+
+<body>
+  <main>
+    <div class="merch">
+        <div class="merch-link">
+          <ul>
+            <a href="/index.html"><li>Главная </li></a>
+            <a href="/catalogy/index.html"><li>/ Каталог</li></a>
+            <a href="/catalogy/kids-collection/index.html"><li>/ Детская коллекция</li></a>
+          </ul>
+        </div>
+    </div>
+    <div class="catalogy">
+      <div class="filter-btn" id="filter-btn" onclick="showFilter()">
+        <div class="filter-btn__span">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+        <p>фильтры</p>
+      </div>
+      <div class="filter" id="filter">
+          <div class="setting">
+            <div class="size">
+              <p>Размеры</p>
+              <div class="size-btn">
+                <button class="sizeBtn">XS</button>
+                <button class="sizeBtn">S</button>
+                <button class="sizeBtn">M</button>
+                <button class="sizeBtn">L</button>
+                <button class="sizeBtn">XL</button>
+                <button class="sizeBtn">2XL</button>
+                <button class="sizeBtn">3XL</button>
+                <button class="sizeBtn">4XL</button>
+                <button class="sizeBtn">5XL</button>
+                <button class="sizeBtn">6XL</button>
+              </div>
+            </div>
+            <div class="catal">
+              <p>Каталог</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="1" class="cloth" value="Головной убор">
+                  <label for="1">Головные уборы</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="2" class="cloth" value="Худи">
+                  <label for="2">Худи</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="3" class="cloth" value="Футболка">
+                  <label for="3">Футболка</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="4" class="cloth" value="Куртка">
+                  <label for="4">Куртки</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="5" class="cloth" value="Шорты">
+                  <label for="5">Шорты</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="6" class="cloth" value="Обувь">
+                  <label for="6">Обувь</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="7" class="cloth" value="Толстовка">
+                  <label for="7">Толстовка</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="catal">
+              <p>Коллекция команд</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com1" class="cloth" value="Aston Martin">
+                  <label for="com1">Aston Martin</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com2" class="cloth" value="Haas">
+                  <label for="com2">Haas</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com3" class="cloth" value="BMW">
+                  <label for="com3">BMW</label>
+                </div>
+                <div class="catal-radio__btn" id="command">
+                  <p>Смотреть больше</p>
+                  <div class="catal-radio__btn-block">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+                </div>
+                <div class="display" style="display: none;">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com4">
+                    <label for="com4">Mercedes</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com5">
+                    <label for="com5">Alpine</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="com1" id="com6">
+                    <label for="com6">Не известно</label>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="catal">
+              <p>Коллекция пилотов</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil1" class="cloth" value="Max Verstappen">
+                  <label for="pil1">Max Verstappen</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil2" class="cloth" value="Fernando Alonso">
+                  <label for="pil2">Fernando Alonso</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil3" class="cloth" value="Lance Stroll">
+                  <label for="pil3">Lance Stroll</label>
+                </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil4" class="cloth" value="Sargeant Logan">
+                    <label for="pil4">Sargeant Logan</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil5" class="cloth" value="Lando Norris">
+                    <label for="pil5">Lando Norris</label>
+                  </div>
+                  <div class="catal-radio__btn" id="pilots">
+                    <p>Смотреть больше</p>
+                    <div class="catal-radio__btn-block">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                <div class="display" id="pilot" style="display: none;">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil6" class="cloth" value="Daniel Ricciardo">
+                    <label for="pil6">Daniel Ricciardo</label>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="apply">
+              <a href="#up"><button class="applyBtn">Применить</button></a>
+              <div class="reset" id="reset">
+                <p>Сбросить</p>
+                <div class="reset-block">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="wrapper">
+        <div class="product" id="paginated-list" data-current-page="1" aria-live="polite">
+
+        <!----  <div class="product-catal list" id="list">
+            
+          </div>--->
+
+        </div>
+  
+        <nav class="pagination-container" id="pag-cont">
+          <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+            &lt;
+          </button>
+      
+          <a href="#"><div id="pagination-numbers">
+      
+          </div></a>
+      
+          <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+            &gt;
+          </button>
+        </nav>
+      </div>
+
+  </div>
+
+</main>
+  
+  <footer class="footer">
+    <div class="container" id="containerFormUp"> 
+      <div class="form-container form__wrapper" id="form">
+        <!-- Форма обратной связи -->
+        <form id="feedback-form" action="/feedback/form-processing.php" enctype="multipart/form-data" method="post" novalidate>
+              <h2>Подпишитесь на обновления коллекции</h2>
+              <div class="form-row">
+                <!-- Email пользователя -->
+                <div class="form-group">
+                  <input id="email" type="email" name="email" required="required" class="form-control" value=""
+                    placeholder="введите почту">
+                  <div class="invalid-feedback"></div>
+                </div>
+              
+                  <!-- Кнопка для отправки формы на сервер -->
+                  <div class="form-submit">
+                    <button id="buttonForm" type="submit">Подписаться</button>
+                  </div>
+                </div>
+        </form>
+      </div>
+  </div>
+  <div class="link">
+    <h2>мы в социальных сетях</h2>
+    <div class="link-icon">
+      <a href="#"><img src="/icon/teleg.png" alt=""></a>
+      <a href="#"><img src="/icon/insta.png" alt=""></a>
+      <a href="#"><img src="/icon/whatsapp.png" alt=""></a>
+    </div>
+  </div>
+  </footer>
+  <script src="/feedback/js/form-processing.js"></script>
+  <script>
+    /*
+      attachMaxItems: 3,
+      attachMaxFileSize: 128,
+      attachExt: ['png', 'jpg']
+    */
+
+    ItcSubmitForm.getOrCreateInstance('form');
+
+    document.addEventListener('itc.successSendForm', (e) => {
+      const el = e.target.closest('.form-container').querySelector('.form-success');
+      el.classList.remove('form-success_hide');
+    });
+
+    // при клике на .form-success__btn
+    document.querySelector('.form-success__btn').addEventListener('click', (e) => {
+      const el = e.target.closest('.form-container').querySelector('form');
+      const form = ItcSubmitForm.getOrCreateInstance(el);
+      form.reset();
+      e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
+    });
+
+  </script>
+<script defer type="module" src="/script/catalogKids.js"></script>
+<script src="/script/up.js"></script>
+<script src="/script/showFilter.js"></script>
+</body>
+</html>
+

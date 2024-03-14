@@ -29,7 +29,7 @@
       <div class="link">
         <a href="/catalogy/man-collection/index.html">-Мужское</a>
         <a href="/catalogy/women-collection/index.html">-Женское</a>
-        <a href="#">-Детское</a>
+        <a href="/catalogy/kids-collection/index.html">-Детское</a>
         <a href="#">-Для дома</a>
         <a href="#">-Аксессуары</a>
       </div>
@@ -45,8 +45,8 @@
 
     <div class="link">
       <input type="search" name="q" id="site-search" placeholder="Поиск">
-      <img src="/icon/like.png" alt="Избранное" width="30px">
-      <img src="/icon/korzina.png" alt="Корзина" width="30px">
+      <a href="/favorites/favorites.html"><button data-count="0"><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt" data-count="0"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
 
     <div class="logo">
@@ -128,16 +128,16 @@
                 <p>Коллекция команд</p>
                 <div class="catal-radio">
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com1">
-                    <label for="com1">Mercedes</label>
+                    <input type="radio" name="com1" id="com1" class="cloth" value="Aston Martin">
+                    <label for="com1">Aston Martin</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com2">
-                    <label for="com2">Alpine</label>
+                    <input type="radio" name="com1" id="com2" class="cloth" value="Haas">
+                    <label for="com2">Haas</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com3">
-                    <label for="com3">Haas</label>
+                    <input type="radio" name="com1" id="com3" class="cloth" value="BMW">
+                    <label for="com3">BMW</label>
                   </div>
                   <div class="catal-radio__btn" id="command">
                     <p>Смотреть больше</p>
@@ -150,11 +150,11 @@
                   <div class="display" style="display: none;">
                     <div class="catal-radio__block">
                       <input type="radio" name="com1" id="com4">
-                      <label for="com4">Не известно</label>
+                      <label for="com4">Mercedes</label>
                     </div>
                     <div class="catal-radio__block">
                       <input type="radio" name="com1" id="com5">
-                      <label for="com5">Не известно</label>
+                      <label for="com5">Alpine</label>
                     </div>
                     <div class="catal-radio__block">
                       <input type="radio" name="com1" id="com6">
@@ -169,23 +169,23 @@
                 <p>Коллекция пилотов</p>
                 <div class="catal-radio">
                   <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil1">
+                    <input type="radio" name="pil1" id="pil1" class="cloth" value="Max Verstappen">
                     <label for="pil1">Max Verstappen</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil2">
-                    <label for="pil2">Sargeant Logan</label>
+                    <input type="radio" name="pil1" id="pil2" class="cloth" value="Fernando Alonso">
+                    <label for="pil2">Fernando Alonso</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil3">
-                    <label for="pil3">Daniel Ricciardo</label>
+                    <input type="radio" name="pil1" id="pil3" class="cloth" value="Lance Stroll">
+                    <label for="pil3">Lance Stroll</label>
                   </div>
                     <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil4">
+                      <input type="radio" name="pil1" id="pil4" class="cloth" value="Sargeant Logan">
                       <label for="pil4">Sargeant Logan</label>
                     </div>
                     <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil5">
+                      <input type="radio" name="pil1" id="pil5" class="cloth" value="Lando Norris">
                       <label for="pil5">Lando Norris</label>
                     </div>
                     <div class="catal-radio__btn" id="pilots">
@@ -198,7 +198,7 @@
                     </div>
                   <div class="display" id="pilot" style="display: none;">
                     <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil6">
+                      <input type="radio" name="pil1" id="pil6" class="cloth" value="Daniel Ricciardo">
                       <label for="pil6">Daniel Ricciardo</label>
                     </div>
                   </div>
@@ -302,7 +302,7 @@
     });
 
   </script>
-<script type="module" src="/script/filter.js"></script>
+
 <script defer type="module" src="/script/catalog.js"></script>
 <script src="/script/up.js"></script>
 <script src="/script/showFilter.js"></script>

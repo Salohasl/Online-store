@@ -29,7 +29,7 @@
       <div class="link">
         <a href="/catalogy/man-collection/index.html" class="active">-Мужское</a>
         <a href="/catalogy/women-collection/index.html">-Женское</a>
-        <a href="#">-Детское</a>
+        <a href="/catalogy/kids-collection/index.html">-Детское</a>
         <a href="#">-Для дома</a>
         <a href="#">-Аксессуары</a>
       </div>
@@ -45,8 +45,8 @@
 
     <div class="link">
       <input type="search" name="q" id="site-search" placeholder="Поиск">
-      <img src="/icon/like.png" alt="Избранное" width="30px">
-      <img src="/icon/korzina.png" alt="Корзина" width="30px">
+      <a href="/favorites/favorites.html"><button data-count="0"><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt" data-count="0"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
 
     <div class="logo">
@@ -66,81 +66,130 @@
         </div>
     </div>
     <div class="catalogy">
-        <div class="filter-btn" id="filter-btn" onclick="showFilter()">
-          <div class="filter-btn__span">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div>
-          <p>фильтры</p>
+      <div class="filter-btn" id="filter-btn" onclick="showFilter()">
+        <div class="filter-btn__span">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
-        <div class="filter" id="filter">
-            <div class="setting">
-              <div class="size">
-                <p>Размеры</p>
-                <div class="size-btn">
-                  <button class="sizeBtn">XS</button>
-                  <button class="sizeBtn">S</button>
-                  <button class="sizeBtn">M</button>
-                  <button class="sizeBtn">L</button>
-                  <button class="sizeBtn">XL</button>
-                  <button class="sizeBtn">2XL</button>
-                  <button class="sizeBtn">3XL</button>
-                  <button class="sizeBtn">4XL</button>
-                  <button class="sizeBtn">5XL</button>
-                  <button class="sizeBtn">6XL</button>
+        <p>фильтры</p>
+      </div>
+      <div class="filter" id="filter">
+          <div class="setting">
+            <div class="size">
+              <p>Размеры</p>
+              <div class="size-btn">
+                <button class="sizeBtn">XS</button>
+                <button class="sizeBtn">S</button>
+                <button class="sizeBtn">M</button>
+                <button class="sizeBtn">L</button>
+                <button class="sizeBtn">XL</button>
+                <button class="sizeBtn">2XL</button>
+                <button class="sizeBtn">3XL</button>
+                <button class="sizeBtn">4XL</button>
+                <button class="sizeBtn">5XL</button>
+                <button class="sizeBtn">6XL</button>
+              </div>
+            </div>
+            <div class="catal">
+              <p>Каталог</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="1" class="cloth" value="Головной убор">
+                  <label for="1">Головные уборы</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="2" class="cloth" value="Худи">
+                  <label for="2">Худи</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="3" class="cloth" value="Футболка">
+                  <label for="3">Футболка</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="4" class="cloth" value="Куртка">
+                  <label for="4">Куртки</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="5" class="cloth" value="Шорты">
+                  <label for="5">Шорты</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="6" class="cloth" value="Обувь">
+                  <label for="6">Обувь</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="1" id="7" class="cloth" value="Толстовка">
+                  <label for="7">Толстовка</label>
                 </div>
               </div>
-              <div class="catal">
-                <p>Каталог</p>
-                <div class="catal-radio">
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="1" class="cloth" value="Головной убор">
-                    <label for="1">Головные уборы</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="2" class="cloth" value="Худи">
-                    <label for="2">Худи</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="3" class="cloth" value="Футболка">
-                    <label for="3">Футболка</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="4" class="cloth" value="Куртка">
-                    <label for="4">Куртки</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="5" class="cloth" value="Шорты">
-                    <label for="5">Шорты</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="6" class="cloth" value="Обувь">
-                    <label for="6">Обувь</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="1" id="7" class="cloth" value="Толстовка">
-                    <label for="7">Толстовка</label>
-                  </div>
-                </div>
-              </div>
+            </div>
 
-              <div class="catal">
-                <p>Коллекция команд</p>
-                <div class="catal-radio">
+            <div class="catal">
+              <p>Коллекция команд</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com1" class="cloth" value="Aston Martin">
+                  <label for="com1">Aston Martin</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com2" class="cloth" value="Haas">
+                  <label for="com2">Haas</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="com1" id="com3" class="cloth" value="BMW">
+                  <label for="com3">BMW</label>
+                </div>
+                <div class="catal-radio__btn" id="command">
+                  <p>Смотреть больше</p>
+                  <div class="catal-radio__btn-block">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+                </div>
+                <div class="display" style="display: none;">
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com1">
-                    <label for="com1">Mercedes</label>
+                    <input type="radio" name="com1" id="com4">
+                    <label for="com4">Mercedes</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com2">
-                    <label for="com2">Alpine</label>
+                    <input type="radio" name="com1" id="com5">
+                    <label for="com5">Alpine</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com3">
-                    <label for="com3">Haas</label>
+                    <input type="radio" name="com1" id="com6">
+                    <label for="com6">Не известно</label>
                   </div>
-                  <div class="catal-radio__btn" id="command">
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="catal">
+              <p>Коллекция пилотов</p>
+              <div class="catal-radio">
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil1" class="cloth" value="Max Verstappen">
+                  <label for="pil1">Max Verstappen</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil2" class="cloth" value="Fernando Alonso">
+                  <label for="pil2">Fernando Alonso</label>
+                </div>
+                <div class="catal-radio__block">
+                  <input type="radio" name="pil1" id="pil3" class="cloth" value="Lance Stroll">
+                  <label for="pil3">Lance Stroll</label>
+                </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil4" class="cloth" value="Sargeant Logan">
+                    <label for="pil4">Sargeant Logan</label>
+                  </div>
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil5" class="cloth" value="Lando Norris">
+                    <label for="pil5">Lando Norris</label>
+                  </div>
+                  <div class="catal-radio__btn" id="pilots">
                     <p>Смотреть больше</p>
                     <div class="catal-radio__btn-block">
                       <div class="circle"></div>
@@ -148,87 +197,56 @@
                       <div class="circle"></div>
                     </div>
                   </div>
-                  <div class="display" style="display: none;">
-                    <div class="catal-radio__block">
-                      <input type="radio" name="com1" id="com4">
-                      <label for="com4">Не известно</label>
-                    </div>
-                    <div class="catal-radio__block">
-                      <input type="radio" name="com1" id="com5">
-                      <label for="com5">Не известно</label>
-                    </div>
-                    <div class="catal-radio__block">
-                      <input type="radio" name="com1" id="com6">
-                      <label for="com6">Не известно</label>
-                    </div>
+                <div class="display" id="pilot" style="display: none;">
+                  <div class="catal-radio__block">
+                    <input type="radio" name="pil1" id="pil6" class="cloth" value="Daniel Ricciardo">
+                    <label for="pil6">Daniel Ricciardo</label>
                   </div>
-                  
                 </div>
+                
               </div>
+            </div>
 
-              <div class="catal">
-                <p>Коллекция пилотов</p>
-                <div class="catal-radio">
-                  <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil1">
-                    <label for="pil1">Max Verstappen</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil2">
-                    <label for="pil2">Sargeant Logan</label>
-                  </div>
-                  <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil3">
-                    <label for="pil3">Daniel Ricciardo</label>
-                  </div>
-                    <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil4">
-                      <label for="pil4">Sargeant Logan</label>
-                    </div>
-                    <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil5">
-                      <label for="pil5">Lando Norris</label>
-                    </div>
-                    <div class="catal-radio__btn" id="pilots">
-                      <p>Смотреть больше</p>
-                      <div class="catal-radio__btn-block">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                      </div>
-                    </div>
-                  <div class="display" id="pilot" style="display: none;">
-                    <div class="catal-radio__block">
-                      <input type="radio" name="pil1" id="pil6">
-                      <label for="pil6">Daniel Ricciardo</label>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-
-              <div class="apply">
-                <button>Применить</button>
-                <div class="reset" id="reset">
-                  <p>Сбросить</p>
-                  <div class="reset-block">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
+            <div class="apply">
+              <a href="#up"><button class="applyBtn">Применить</button></a>
+              <div class="reset" id="reset">
+                <p>Сбросить</p>
+                <div class="reset-block">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
                 </div>
               </div>
             </div>
-        </div>
-        <div class="product">
-            каталог
-        </div>
-    </div>
-    
+          </div>
+      </div>
+      <div class="wrapper">
+        <div class="product" id="paginated-list" data-current-page="1" aria-live="polite">
 
+        <!----  <div class="product-catal list" id="list">
+            
+          </div>--->
 
-    
-  </main>
+        </div>
+  
+        <nav class="pagination-container" id="pag-cont">
+          <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+            &lt;
+          </button>
+      
+          <a href="#"><div id="pagination-numbers">
+      
+          </div></a>
+      
+          <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+            &gt;
+          </button>
+        </nav>
+      </div>
+
+  </div>
+
+</main>
   
   <footer class="footer">
     <div class="container" id="containerFormUp"> 
@@ -285,6 +303,7 @@
     });
 
   </script>
+<script defer type="module" src="/script/catalogMan.js"></script>
 <script src="/script/up.js"></script>
 <script src="/script/showFilter.js"></script>
 </body>

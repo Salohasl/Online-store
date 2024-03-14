@@ -8,14 +8,15 @@ const product = document.querySelector('.product');
 
 //Для фильтрации каталога
 const applyBtn = document.querySelector('.applyBtn');
+//Выбор Категории
 const radio = document.querySelectorAll('.cloth');
+
 
 //Сброс всех настроек в фильтре
 const resetBtn = document.querySelector('.reset');
 resetBtn.addEventListener('click', ()=>{
   location.reload();
 })
-
 
 //Функция выгрузки товара
 function productUnloading(){
@@ -24,35 +25,44 @@ function productUnloading(){
       let productCatal = document.createElement('div');
       productCatal.classList.add('product-catal');
       productCatal.setAttribute('data-category', key.category);
+      productCatal.setAttribute('data-pilot', key.pilot);
+      productCatal.setAttribute('data-size', key.size);
+      productCatal.setAttribute('data-command', key.command);
       product.append(productCatal);
 
+    
 
-      
-      //Создание массива для категорий одежды
+      //Создание массива для категорий одежды, категорий пилотов
       let res = [];
       res.push(productCatal.dataset.category)
+      res.push(productCatal.dataset.pilot);
+      res.push(productCatal.dataset.command);
+      res.push(productCatal.dataset.size);
+      res = res.filter(item => item !== 'undefined');
       
-      //Настройка филтрации одежды по radio
-      radio.forEach(elem => {
-        elem.addEventListener('click', ()=>{
-          console.log(elem.value);
-          //При нажатии на применять сработает скрипт
-          applyBtn.addEventListener('click', ()=>{
-            if(!(res == elem.value)){
-              productCatal.length == res;
-              productCatal.style.display = 'none';
-            }else{
-              productCatal.style.display = 'block';
-            }    
+      //Настройка фильтрации одежды по radio
+        radio.forEach(elem => {
+          elem.addEventListener('click', ()=>{     
+            applyBtn.addEventListener('click', ()=>{
+              //скрытие пагинации res.includes(elem.value)
+              document.getElementById('pag-cont').style.display = 'none';
+              if(res.includes(elem.value)){
+                productCatal.style.display = 'block';
+              }else{
+                productCatal.style.display = 'none';
+              }    
+            })
           })
         })
-      })
-      
+
+
+
+      function creatingBlocks(){
 
         let img = document.createElement('img');
         img.src = key.src;
         productCatal.append(img);
-
+      
         let category = document.createElement('h4');
         category.textContent = key.name
         productCatal.append(category);
@@ -71,11 +81,55 @@ function productUnloading(){
         price.textContent = key.price;
         productPrice.append(price);
 
-    }
+      }creatingBlocks();
+        
+      //Создание блока поверх продукта с возможностью добавления в корзину
+      function creatingBlocksHover(){
+        let productHover = document.createElement('div');
+        productHover.classList.add('product-hover');
+        productCatal.prepend(productHover);
 
+        let imgHover = document.createElement('img');
+        imgHover.src = key.srcHover;
+        productHover.append(imgHover);
+
+        let category = document.createElement('h4');
+        category.textContent = key.name
+        productHover.append(category);
+
+        let size = document.createElement('p');
+        size.textContent = 'Размер';
+        productHover.append(size);
+
+        //Создание блока с кнопками размера
+        let buttonBlock = document.createElement('div');
+        buttonBlock.classList.add('button-block');
+        productHover.append(buttonBlock);
+        //кнопка размера
+        let arr = productCatal.dataset.size.split(',');
+        for(let arrSize of arr ){
+          let buttonSize = document.createElement('button');
+          if(arrSize !== 'undefined'){
+            buttonSize.textContent = arrSize;
+            buttonSize.className = arrSize;
+          }else{
+            buttonSize.textContent = '-';
+            buttonSize.className = 'oneSize';
+          }
+          buttonBlock.append(buttonSize);
+        }
+        
+        //Создание корзины
+        let basket = document.createElement('img');
+        basket.src = '/icon/korzina.png';
+        basket.classList.add('basket-hover');
+        productHover.append(basket);
+      }creatingBlocksHover()
+
+
+    }
 }
 productUnloading();
-
 
 
 
