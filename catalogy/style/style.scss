@@ -449,13 +449,19 @@
     }
   }
   .basket-hover{
+    background-color: rgba(55, 55, 55, 0);
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    height: 50px;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    border-radius: 0px;
+    bottom: 10px;
+    right: 10px;
+    img{
+      width: 30px;
+      height: 30px;
+
+    }
     &:hover{
       filter: drop-shadow(1px 1px 1px rgb(255,207,0));
     }

@@ -90,6 +90,7 @@ function productUnloading(){
         productCatal.prepend(productHover);
 
         let imgHover = document.createElement('img');
+        imgHover.classList.add('img-hover');
         imgHover.src = key.srcHover;
         productHover.append(imgHover);
 
@@ -120,10 +121,21 @@ function productUnloading(){
         }
         
         //Создание корзины
-        let basket = document.createElement('img');
-        basket.src = '/icon/korzina.png';
-        basket.classList.add('basket-hover');
-        productHover.append(basket);
+        let basketBtn = document.createElement('button');
+        basketBtn.setAttribute('data-gender', key.gender);
+        basketBtn.setAttribute('data-price', key.price);
+        basketBtn.setAttribute('data-name', key.name);
+        basketBtn.setAttribute('data-description', key.description);
+        basketBtn.setAttribute('data-id', key.id);
+        basketBtn.classList.add('basket-hover');
+        productHover.append(basketBtn);
+        let basketImg = document.createElement('img');
+        basketImg.src = '/icon/korzina.png';
+        basketBtn.append(basketImg);
+
+
+        
+
       }creatingBlocksHover()
 
 

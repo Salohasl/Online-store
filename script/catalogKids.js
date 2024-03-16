@@ -1,6 +1,7 @@
 import catalogAston from './arrCatalog.js';
 /*Выбор данных из массива объектов*/
 
+
 //В переменной хранится каталог
 let productAston  = catalogAston;
 
@@ -22,112 +23,124 @@ resetBtn.addEventListener('click', ()=>{
 function productUnloading(){
     for(let key of productAston){
       let gender = key.gender;
-      if(gender == 'Детское'){
-        let productCatal = document.createElement('div');
-        productCatal.classList.add('product-catal');
-        productCatal.setAttribute('data-category', key.category);
-        productCatal.setAttribute('data-pilot', key.pilot);
-        productCatal.setAttribute('data-size', key.size);
-        productCatal.setAttribute('data-command', key.command);
-        product.append(productCatal);
+    if(gender == 'Детское'){
+      let productCatal = document.createElement('div');
+      productCatal.classList.add('product-catal');
+      productCatal.setAttribute('data-category', key.category);
+      productCatal.setAttribute('data-pilot', key.pilot);
+      productCatal.setAttribute('data-size', key.size);
+      productCatal.setAttribute('data-command', key.command);
+      product.append(productCatal);
 
+    
+
+      //Создание массива для категорий одежды, категорий пилотов
+      let res = [];
+      res.push(productCatal.dataset.category)
+      res.push(productCatal.dataset.pilot);
+      res.push(productCatal.dataset.command);
+      res.push(productCatal.dataset.size);
+      res = res.filter(item => item !== 'undefined');
       
-
-        //Создание массива для категорий одежды, категорий пилотов
-        let res = [];
-        res.push(productCatal.dataset.category)
-        res.push(productCatal.dataset.pilot);
-        res.push(productCatal.dataset.command);
-        res.push(productCatal.dataset.size);
-        res = res.filter(item => item !== 'undefined');
-        
-        //Настройка фильтрации одежды по radio
-          radio.forEach(elem => {
-            elem.addEventListener('click', ()=>{     
-              applyBtn.addEventListener('click', ()=>{
-                //скрытие пагинации res.includes(elem.value)
-                document.getElementById('pag-cont').style.display = 'none';
-                if(res.includes(elem.value)){
-                  productCatal.style.display = 'block';
-                }else{
-                  productCatal.style.display = 'none';
-                }    
-              })
+      //Настройка фильтрации одежды по radio
+        radio.forEach(elem => {
+          elem.addEventListener('click', ()=>{     
+            applyBtn.addEventListener('click', ()=>{
+              //скрытие пагинации res.includes(elem.value)
+              document.getElementById('pag-cont').style.display = 'none';
+              if(res.includes(elem.value)){
+                productCatal.style.display = 'block';
+              }else{
+                productCatal.style.display = 'none';
+              }    
             })
           })
+        })
 
 
 
-        function creatingBlocks(){
+      function creatingBlocks(){
 
-          let img = document.createElement('img');
-          img.src = key.src;
-          productCatal.append(img);
+        let img = document.createElement('img');
+        img.src = key.src;
+        productCatal.append(img);
+      
+        let category = document.createElement('h4');
+        category.textContent = key.name
+        productCatal.append(category);
+
+        //создание div для центрирования описания и цены
+        let productPrice = document.createElement('div');
+        productPrice.classList.add('product-price');
+        productCatal.append(productPrice);
+
+        //описание
+        let description = document.createElement('p');
+        description.textContent = key.description;
+        productPrice.append(description);
+        //Цена
+        let price = document.createElement('p');
+        price.textContent = key.price;
+        productPrice.append(price);
+
+      }creatingBlocks();
         
-          let category = document.createElement('h4');
-          category.textContent = key.name
-          productCatal.append(category);
+      //Создание блока поверх продукта с возможностью добавления в корзину
+      function creatingBlocksHover(){
+        let productHover = document.createElement('div');
+        productHover.classList.add('product-hover');
+        productCatal.prepend(productHover);
 
-          //создание div для центрирования описания и цены
-          let productPrice = document.createElement('div');
-          productPrice.classList.add('product-price');
-          productCatal.append(productPrice);
+        let imgHover = document.createElement('img');
+        imgHover.classList.add('img-hover');
+        imgHover.src = key.srcHover;
+        productHover.append(imgHover);
 
-          //описание
-          let description = document.createElement('p');
-          description.textContent = key.description;
-          productPrice.append(description);
-          //Цена
-          let price = document.createElement('p');
-          price.textContent = key.price;
-          productPrice.append(price);
+        let category = document.createElement('h4');
+        category.textContent = key.name
+        productHover.append(category);
 
-        }creatingBlocks();
-          
-        //Создание блока поверх продукта с возможностью добавления в корзину
-        function creatingBlocksHover(){
-          let productHover = document.createElement('div');
-          productHover.classList.add('product-hover');
-          productCatal.prepend(productHover);
+        let size = document.createElement('p');
+        size.textContent = 'Размер';
+        productHover.append(size);
 
-          let imgHover = document.createElement('img');
-          imgHover.src = key.srcHover;
-          productHover.append(imgHover);
-
-          let category = document.createElement('h4');
-          category.textContent = key.name
-          productHover.append(category);
-
-          let size = document.createElement('p');
-          size.textContent = 'Размер';
-          productHover.append(size);
-
-          //Создание блока с кнопками размера
-          let buttonBlock = document.createElement('div');
-          buttonBlock.classList.add('button-block');
-          productHover.append(buttonBlock);
-          //кнопка размера
-          let arr = productCatal.dataset.size.split(',');
-          for(let arrSize of arr ){
-            let buttonSize = document.createElement('button');
-            if(arrSize !== 'undefined'){
-              buttonSize.textContent = arrSize;
-              buttonSize.className = arrSize;
-            }else{
-              buttonSize.textContent = '-';
-              buttonSize.className = 'oneSize';
-            }
-            buttonBlock.append(buttonSize);
+        //Создание блока с кнопками размера
+        let buttonBlock = document.createElement('div');
+        buttonBlock.classList.add('button-block');
+        productHover.append(buttonBlock);
+        //кнопка размера
+        let arr = productCatal.dataset.size.split(',');
+        for(let arrSize of arr ){
+          let buttonSize = document.createElement('button');
+          if(arrSize !== 'undefined'){
+            buttonSize.textContent = arrSize;
+            buttonSize.className = arrSize;
+          }else{
+            buttonSize.textContent = '-';
+            buttonSize.className = 'oneSize';
           }
-          
-          //Создание корзины
-          let basket = document.createElement('img');
-          basket.src = '/icon/korzina.png';
-          basket.classList.add('basket-hover');
-          productHover.append(basket);
-        }creatingBlocksHover()
-      }
+          buttonBlock.append(buttonSize);
+        }
+        
+        //Создание корзины
+        let basketBtn = document.createElement('button');
+        basketBtn.setAttribute('data-gender', key.gender);
+        basketBtn.setAttribute('data-price', key.price);
+        basketBtn.setAttribute('data-name', key.name);
+        basketBtn.setAttribute('data-description', key.description);
+        basketBtn.setAttribute('data-id', key.id);
+        basketBtn.classList.add('basket-hover');
+        productHover.append(basketBtn);
+        let basketImg = document.createElement('img');
+        basketImg.src = '/icon/korzina.png';
+        basketBtn.append(basketImg);
 
+
+        
+
+      }creatingBlocksHover()
+
+    }
     }
 }
 productUnloading();

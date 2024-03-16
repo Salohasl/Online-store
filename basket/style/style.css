@@ -249,6 +249,10 @@ main .wrapper .basket table td {
 main .wrapper .basket table td:nth-of-type(2) {
   border-left: 1px solid white;
 }
+main .wrapper .basket table td img {
+  width: 100px;
+  margin-left: 100px;
+}
 main .wrapper .basket table td .close {
   width: 30px;
   height: 30px;
@@ -258,14 +262,68 @@ main .wrapper .basket table td .close {
 main .wrapper .basket table td .close span {
   border: 1px solid white;
   height: 20px;
+  position: absolute;
 }
 main .wrapper .basket table td .close span:nth-of-type(1) {
-  position: absolute;
   transform: rotate(45deg);
 }
 main .wrapper .basket table td .close span:nth-of-type(2) {
-  position: absolute;
   transform: rotate(-45deg);
+}
+main .wrapper .basket table td .table-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: -25px;
+  gap: 50px;
+}
+main .wrapper .basket table td .table-item .table-item__block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+main .wrapper .basket table td .table-item .table-item__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main .wrapper .basket table td .table-item .table-item__text p {
+  font-size: 20px;
+}
+main .wrapper .basket table td .table-item .table-item__size {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+main .wrapper .basket table td .table-item .table-item__size p {
+  color: rgba(184, 184, 184, 0.9);
+}
+main .wrapper .basket table td .table-item .table-item__size .min-max {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+main .wrapper .basket table td .table-item .table-item__size .min-max button {
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .wrapper .basket table td .table-item .table-item__size .min-max p {
+  color: white;
 }
 main .wrapper .basket table .price {
   color: white;
@@ -326,7 +384,6 @@ main .wrapper .decor a .decor-line span:nth-of-type(2) {
 }
 main .wrapper .recommen {
   margin-top: -40px;
-  height: 1200px;
   border-right: 300px solid rgba(0, 0, 0, 0.8);
   border-left: 50px solid transparent;
   border-top: 50px solid transparent;
@@ -338,6 +395,34 @@ main .wrapper .recommen h2 {
   padding: 15px;
   font-weight: 300;
   color: white;
+}
+main .wrapper .recommen .recommen-block {
+  margin-right: -300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .wrapper .recommen .recommen-block .recommen-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 20px;
+}
+main .wrapper .recommen .recommen-block .recommen-item img {
+  width: 100px;
+}
+main .wrapper .recommen .recommen-block .recommen-item .recommen-item__text {
+  margin-left: 20px;
+}
+main .wrapper .recommen .recommen-block .recommen-item .recommen-item__text p {
+  color: white;
+}
+main .wrapper .recommen .recommen-block .recommen-item .recommen-item__text p:nth-of-type(3) {
+  margin-top: 15px;
+  font-size: 20px;
 }
 
 .footer {
