@@ -113,9 +113,13 @@ function productUnloading(){
           if(arrSize !== 'undefined'){
             buttonSize.textContent = arrSize;
             buttonSize.className = arrSize;
+            buttonSize.classList.add('size-button');
+            buttonSize.setAttribute('data-id', key.id);
           }else{
             buttonSize.textContent = '-';
             buttonSize.className = 'oneSize';
+            buttonSize.classList.add('size-button');
+            buttonSize.setAttribute('data-id', key.id);
           }
           buttonBlock.append(buttonSize);
         }
@@ -133,7 +137,11 @@ function productUnloading(){
         basketImg.src = '/icon/korzina.png';
         basketBtn.append(basketImg);
 
+        const bt = document.querySelector('.bt img');
 
+        basketBtn.addEventListener('click', ()=>{
+          bt.classList.add('active');
+        })
         
 
       }creatingBlocksHover()
@@ -153,7 +161,7 @@ function pagination(){
   const nextButton = document.getElementById("next-button");
   const prevButton = document.getElementById("prev-button");
 
-  const paginationLimit = 15;
+  const paginationLimit = 20;
   const pageCount = Math.ceil(listItems.length / paginationLimit);
   let currentPage = 1;
   

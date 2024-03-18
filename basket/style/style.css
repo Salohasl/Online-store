@@ -169,12 +169,8 @@ header .link input {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-header .link .bt::before {
-  content: attr(data-count);
-  position: absolute;
-  color: white;
-  right: 19px;
-  top: -8px;
+header .link .bt img {
+  filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
 }
 header .link button {
   background-color: black;
@@ -182,13 +178,6 @@ header .link button {
   cursor: pointer;
   margin-left: 20px;
   position: relative;
-}
-header .link button::before {
-  content: attr(data-count);
-  position: absolute;
-  color: white;
-  right: 19px;
-  top: 7px;
 }
 header .logo {
   display: flex;

@@ -7,9 +7,11 @@ const paymentPrice = document.querySelector('.payment-price');
 
 function removeToCartLocalStorage() {
     const table = document.querySelector('table');
-    let savedProduct = JSON.parse(localStorage.getItem('product')) || []; // Инициализация пустым массивом, если в localStorage нет данных
-    
-
+    let productCatalog = JSON.parse(localStorage.getItem('product')) || []; // Инициализация пустым массивом, если в localStorage нет данных
+    let productMan = JSON.parse(localStorage.getItem('productMan')) || []; // Инициализация пустым массивом, если в localStorage нет данных
+    let productWomen = JSON.parse(localStorage.getItem('productWomen')) || []; // Инициализация пустым массивом, если в localStorage нет данных
+    let productKids = JSON.parse(localStorage.getItem('productKids')) || [];
+    let savedProduct = [...productCatalog, ... productMan, ...productWomen, ...productKids];
     let num;
     for (let product of savedProduct) {
         let tr = document.createElement('tr');
@@ -48,7 +50,7 @@ function removeToCartLocalStorage() {
         size.classList.add('table-item__size');
         size.innerHTML = `
             <p>размер</p>
-            <p>...</p>
+            <p>${product.size}</p>
         `;
         divTwo.append(size);
 
@@ -80,13 +82,42 @@ function removeToCartLocalStorage() {
             tr.remove();
 
             // Находим индекс продукта в массиве savedProduct
-            const index = savedProduct.findIndex(p => p.name === product.name);
+            const index = productCatalog.findIndex(p => p.name === product.name);
             if (index !== -1) {
                 // Удаляем продукт из массива
-                savedProduct.splice(index, 1);
+                productCatalog.splice(index, 1);
                 // Обновляем данные в localStorage
-                localStorage.setItem('product', JSON.stringify(savedProduct));
+                localStorage.setItem('product', JSON.stringify(productCatalog));
             }
+
+            // Находим индекс продукта в массиве savedProduct
+            const index1 = productMan.findIndex(p => p.name === product.name);
+            if (index1 !== -1) {
+                // Удаляем продукт из массива
+                productMan.splice(index1, 1);
+                // Обновляем данные в localStorage
+                localStorage.setItem('productMan', JSON.stringify(productMan));
+            }
+
+            // Находим индекс продукта в массиве savedProduct
+            const index2 = productWomen.findIndex(p => p.name === product.name);
+            if (index2 !== -1) {
+                // Удаляем продукт из массива
+                productWomen.splice(index2, 1);
+                // Обновляем данные в localStorage
+                localStorage.setItem('productWomen', JSON.stringify(productWomen));
+            }
+
+
+            // Находим индекс продукта в массиве savedProduct
+            const index3 = productKids.findIndex(p => p.name === product.name);
+            if (index3 !== -1) {
+                // Удаляем продукт из массива
+                productKids.splice(index3, 1);
+                // Обновляем данные в localStorage
+                localStorage.setItem('productKids', JSON.stringify(productKids));
+            }
+
 
             // Обновляем общую сумму
             num = td2.textContent.slice(0, -1);

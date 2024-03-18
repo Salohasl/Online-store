@@ -45,8 +45,8 @@
 
     <div class="link">
       <input type="search" name="q" id="site-search" placeholder="Поиск">
-      <a href="/favorites/favorites.html"><button data-count="0"><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
-      <a href="/basket/basket.html"><button class="bt" data-count="0"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
+      <a href="/favorites/favorites.html"><button ><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
 
     <div class="logo">
@@ -55,6 +55,14 @@
 </header>
 
 <body>
+  <div class="preloader">
+    <svg class="preloader__image" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
+      </path>
+    </svg>
+  </div>
+
   <main>
     <div class="merch">
         <div class="merch-link">
@@ -138,7 +146,7 @@
                 </div>
                 <div class="catal-radio__block">
                   <input type="radio" name="com1" id="com3" class="cloth" value="BMW">
-                  <label for="com3">BMW</label>
+                  <label for="com3">Alpine</label>
                 </div>
                 <div class="catal-radio__btn" id="command">
                   <p>Смотреть больше</p>
@@ -154,10 +162,6 @@
                     <label for="com4">Mercedes</label>
                   </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="com1" id="com5">
-                    <label for="com5">Alpine</label>
-                  </div>
-                  <div class="catal-radio__block">
                     <input type="radio" name="com1" id="com6">
                     <label for="com6">Не известно</label>
                   </div>
@@ -170,8 +174,8 @@
               <p>Коллекция пилотов</p>
               <div class="catal-radio">
                 <div class="catal-radio__block">
-                  <input type="radio" name="pil1" id="pil1" class="cloth" value="Max Verstappen">
-                  <label for="pil1">Max Verstappen</label>
+                  <input type="radio" name="pil1" id="pil1" class="cloth" value="Esteban Ocon">
+                  <label for="pil1">Esteban Ocon</label>
                 </div>
                 <div class="catal-radio__block">
                   <input type="radio" name="pil1" id="pil2" class="cloth" value="Fernando Alonso">
@@ -182,8 +186,8 @@
                   <label for="pil3">Lance Stroll</label>
                 </div>
                   <div class="catal-radio__block">
-                    <input type="radio" name="pil1" id="pil4" class="cloth" value="Sargeant Logan">
-                    <label for="pil4">Sargeant Logan</label>
+                    <input type="radio" name="pil1" id="pil4" class="cloth" value="Pierre Gasly">
+                    <label for="pil4">Pierre Gasly</label>
                   </div>
                   <div class="catal-radio__block">
                     <input type="radio" name="pil1" id="pil5" class="cloth" value="Lando Norris">
@@ -281,6 +285,13 @@
   </footer>
   <script src="/feedback/js/form-processing.js"></script>
   <script>
+     window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
     /*
       attachMaxItems: 3,
       attachMaxFileSize: 128,
@@ -304,7 +315,7 @@
 
   </script>
 <script defer type="module" src="/script/catalogKids.js"></script>
-<script type="module" src="/script/localStorage.js"></script>
+<script type="module" src="/script/localStorageKids.js"></script>
 <script src="/script/up.js"></script>
 <script src="/script/showFilter.js"></script>
 </body>

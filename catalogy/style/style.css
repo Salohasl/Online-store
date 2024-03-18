@@ -9,6 +9,51 @@ html {
   scroll-behavior: smooth;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  /* фоновый цвет */
+  background: #e0e0e0;
+  z-index: 1001;
+}
+
+.preloader__image {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  -webkit-animation: preloader-rotate 2s infinite linear;
+          animation: preloader-rotate 2s infinite linear;
+}
+
+@-webkit-keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
 .menuBtn.active span:nth-of-type(1) {
   display: none;
 }
@@ -169,12 +214,8 @@ header .link input {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
-header .link .bt::before {
-  content: attr(data-count);
-  position: absolute;
-  color: white;
-  right: 19px;
-  top: -8px;
+header .link .bt img.active {
+  filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
 }
 header .link button {
   background-color: black;
@@ -456,6 +497,9 @@ main .merch-link ul a:hover {
 .product-hover .button-block button:hover {
   box-shadow: 1px 1px 15px black;
 }
+.product-hover .button-block .size-button.active {
+  background-color: #FFCF00;
+}
 .product-hover .basket-hover {
   background-color: rgba(55, 55, 55, 0);
   border: none;
@@ -471,6 +515,9 @@ main .merch-link ul a:hover {
   height: 30px;
 }
 .product-hover .basket-hover:hover {
+  filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
+}
+.product-hover .basket-hover.active {
   filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
 }
 

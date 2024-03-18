@@ -154,13 +154,10 @@
         border: 1px solid rgb(255,255,255, 0.5);
       }
       .bt{
-        &::before{
-          content: attr(data-count);
-          position: absolute;
-          color: white;
-          right: 19px;
-          top: -8px;
+        img{
+          filter: drop-shadow(1px 1px 1px rgb(255,207,0));
         }
+        
       }
       button{
         background-color: black;
@@ -168,13 +165,6 @@
         cursor: pointer;
         margin-left: 20px;
         position: relative;
-        &::before{
-          content: attr(data-count);
-          position: absolute;
-          color: white;
-          right: 19px;
-          top: 7px;
-        }
       }
     }
     .logo{
