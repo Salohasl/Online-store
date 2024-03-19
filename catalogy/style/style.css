@@ -20,6 +20,12 @@ html {
   background: #e0e0e0;
   z-index: 1001;
 }
+.preloader h3 {
+  text-align: center;
+  padding-top: 15%;
+  font-size: 30px;
+  font-weight: 300;
+}
 
 .preloader__image {
   position: relative;
@@ -509,6 +515,7 @@ main .merch-link ul a:hover {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  z-index: 100;
 }
 .product-hover .basket-hover img {
   width: 30px;
@@ -727,4 +734,172 @@ main .merch-link ul a:hover {
 .pagination-number.active {
   color: #fff;
   background: rgba(0, 0, 0, 0.9);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.page {
+  background-color: white;
+  z-index: 110;
+  width: 100%;
+  display: none;
+  -webkit-animation: show 0.5s linear;
+          animation: show 0.5s linear;
+}
+.page.active {
+  display: block;
+}
+.page .page-block {
+  background-color: rgb(64, 64, 64);
+  margin: 50px;
+  margin-top: 20px;
+}
+.page .page-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+}
+.page .page-content .swiper {
+  width: 300px;
+  height: 400px;
+  margin-top: -60px;
+}
+.page .page-content .swiper:nth-of-type(1) {
+  height: 200px;
+  width: 400px;
+  transform: rotate(90deg);
+  margin-top: 0px;
+}
+.page .page-content .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .page-content .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.page .page-content .swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.page .page-content .swiper-button-next, .page .page-content .swiper-button-prev {
+  color: white;
+}
+.page .page-content .page-content__description {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.page .page-content .page-content__description h2 {
+  margin-top: -70px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.page .page-content .page-content__description h1 {
+  font-weight: 400;
+}
+.page .page-content .page-content__description p {
+  width: 400px;
+  line-height: 25px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.page .page-content .page-content__description .description__size p {
+  margin-top: 20px;
+}
+.page .page-content .page-content__description .description__size .size {
+  margin-top: 10px;
+}
+.page .page-content .page-content__description .description__size .size button {
+  margin-top: 10px;
+  margin: 3px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  padding: 3px;
+}
+.page .page-content .page-content__description .description__size .size button:hover {
+  box-shadow: 1px 1px 15px black;
+}
+.page .page-content .page-content__description .color {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.page .page-content .page-content__description .color .color-block {
+  width: 150px;
+}
+.page .page-content .page-content__description .color .color-block .color-product {
+  margin-top: 10px;
+  box-shadow: 1px 1px 5px black;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: yellow;
+}
+.page .page-content .page-content__description .color button {
+  background-color: #FFCF00;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  width: 150px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.page .page-content .page-content__description .color button:hover {
+  background-color: #e0e0e0;
+}
+.page .recommen h3 {
+  color: white;
+  margin-left: 100px;
+  font-weight: 300;
+  margin-top: 80px;
+}
+.page .recommen .swiper {
+  width: 90%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.page .recommen .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .recommen .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.page .recommen .swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.page .recommen .swiper-button-next, .page .recommen .swiper-button-prev {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/catalogy/style/style.css">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <header>
   <div class="menuBtn">
@@ -61,9 +62,93 @@
         d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
       </path>
     </svg>
+    <h3>Загрузка товара</h3>
   </div>
-  
+
   <main>
+
+    
+  <div class="page">
+    <div class="merch-link">
+      <ul>
+        <a href="/index.html"><li>Главная </li></a>
+        <a href="/catalogy/index.html"><li>/ Каталог</li></a>
+        <a href="#"><li>/ ....</li></a>
+      </ul>
+    </div>
+    <div class="page-block">
+      <div class="page-content">
+        <!-- Swiper rotate-->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              Slide 1
+              Slide 1
+              Slide 2
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+        </div>
+
+        <!-- Swiper-->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-two"></div>
+            <div class="swiper-slide swiper-two"></div>
+            <div class="swiper-slide swiper-two"></div>
+            <div class="swiper-slide swiper-two"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="page-content__description">
+          <h2 class="name">Толстовка <span class="gender">унисекс</span></h2>
+          <h1 class="command">SpeedMark</h1>
+          <p class="fullDescription">Наша унисекс-толстовка McLaren с длинным рукавом Speedmark Graphic Hoodie - 
+            это потрясающая толстовка, которая вам нужена, чтобы поддержать McLaren на заключительном этапе сезона Формулы-1.
+            Выпускается в яркой цветовой гамме Papaya с черным линейным оформлением классического логотипа, 
+            тщательно выполненного с использованием высококачественной печати.</p>
+            <div class="description__size">
+              <p>Размер</p>
+              <div class="size"></div>
+            </div>
+            <div class="color">
+              <div class="color-block">
+                <p>Цвет</p>
+                <div class="color-product"></div>
+              </div>
+              <button>в корзину</button>
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="recommen">
+        <h3>Рекомендуемое</h3>
+        <!-- Swiper-->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            <div class="swiper-slide">Slide 4</div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+
+
+<div id="container">
     <div class="merch" id="up">
         <div class="merch-link">
           <ul>
@@ -248,7 +333,9 @@
         </div>
 
     </div>
- 
+</div>
+
+
   </main>
   
   <footer class="footer">
@@ -316,6 +403,11 @@
 
 <script defer type="module" src="/script/catalog.js"></script>
 <script type="module" src="/script/localStorage.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/script/addPageSwiper.js"></script>
+
+<script type="module" src="/script/addPage.js"></script>
 <script src="/script/up.js"></script>
 <script src="/script/showFilter.js"></script>
 </body>

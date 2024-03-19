@@ -28,9 +28,10 @@ function productUnloading(){
       productCatal.setAttribute('data-pilot', key.pilot);
       productCatal.setAttribute('data-size', key.size);
       productCatal.setAttribute('data-command', key.command);
+      productCatal.setAttribute('data-name', key.name);
+      productCatal.setAttribute('data-gender', key.gender);
+      productCatal.setAttribute('data-img', key.src);
       product.append(productCatal);
-
-    
 
       //Создание массива для категорий одежды, категорий пилотов
       let res = [];
@@ -87,6 +88,13 @@ function productUnloading(){
       function creatingBlocksHover(){
         let productHover = document.createElement('div');
         productHover.classList.add('product-hover');
+        productHover.setAttribute('data-category', key.category);
+        productHover.setAttribute('data-pilot', key.pilot);
+        productHover.setAttribute('data-size', key.size);
+        productHover.setAttribute('data-command', key.command);
+        productHover.setAttribute('data-name', key.name);
+        productHover.setAttribute('data-gender', key.gender);
+        productHover.setAttribute('data-img', key.src);
         productCatal.prepend(productHover);
 
         let imgHover = document.createElement('img');

@@ -405,6 +405,7 @@ main .wrapper .recommen .recommen-block .recommen-item img {
 }
 main .wrapper .recommen .recommen-block .recommen-item .recommen-item__text {
   margin-left: 20px;
+  width: 100px;
 }
 main .wrapper .recommen .recommen-block .recommen-item .recommen-item__text p {
   color: white;

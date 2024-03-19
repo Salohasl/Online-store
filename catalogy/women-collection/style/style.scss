@@ -19,6 +19,12 @@ html {
   /* фоновый цвет */
   background: #e0e0e0;
   z-index: 1001;
+  h3{
+    text-align: center;
+    padding-top: 15%;
+    font-size: 30px;
+    font-weight: 300;
+  }
 }
 
 .preloader__image {
