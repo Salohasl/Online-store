@@ -29,8 +29,6 @@ function productUnloading(){
       productCatal.setAttribute('data-size', key.size);
       productCatal.setAttribute('data-command', key.command);
       productCatal.setAttribute('data-name', key.name);
-      productCatal.setAttribute('data-gender', key.gender);
-      productCatal.setAttribute('data-img', key.src);
       product.append(productCatal);
 
       //Создание массива для категорий одежды, категорий пилотов
@@ -95,8 +93,14 @@ function productUnloading(){
         productHover.setAttribute('data-name', key.name);
         productHover.setAttribute('data-gender', key.gender);
         productHover.setAttribute('data-img', key.src);
+        productHover.setAttribute('data-img1', key.srcHover);
+        productHover.setAttribute('data-img2', key.img2);
+        productHover.setAttribute('data-img3', key.img);
+        productHover.setAttribute('data-color', key.color);
+        productHover.setAttribute('data-full', key.full);
+        productHover.setAttribute('data-id', key.id);
         productCatal.prepend(productHover);
-
+   
         let imgHover = document.createElement('img');
         imgHover.classList.add('img-hover');
         imgHover.src = key.srcHover;

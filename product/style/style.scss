@@ -1,0 +1,507 @@
+*{
+    box-sizing: border-box;
+    font-family: inter;
+    margin: 0;
+  }
+  
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+
+  
+  .preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    /* фоновый цвет */
+    background: #e0e0e0;
+    z-index: 1001;
+    h3{
+      text-align: center;
+      padding-top: 15%;
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
+  
+  .preloader__image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  
+  @keyframes preloader-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }
+  
+
+
+  .menuBtn.active span:nth-of-type(1) {
+    display: none;
+  }
+  
+  .menuBtn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+  
+  .menuBtn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+  }
+  
+  .menuBtn {
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    margin-left: 1%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  nav{
+    display: none;
+  }
+  .menuBtn span {
+    width: 34px;
+    height: 3px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    transition: all 0.5s;
+    border-radius: 2px;
+  }
+  
+  .menuBtn span:nth-of-type(2) {
+  
+    top: calc(35% - 5px);
+  }
+  
+  .menuBtn span:nth-of-type(3) {
+  
+    top: calc(60% + 5px);
+  }
+  nav.popUp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    padding: 2%;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+    width: 450px;
+    height: 100vh;
+    animation-duration: 0.55s;  /* Время работы анимации */
+    animation-fill-mode: both;  /* Поведение анимации */
+    animation-name: fadeInDown;/* Имя анимации */
+    ul{
+      line-height: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+        transition: .4s;
+        font-size: 22px;
+        &:hover{
+          color: #FFCF00;
+        }
+        &.active{
+            color: #FFCF00;
+        }
+      }
+    }
+    .link{
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 30px;
+      &.active{
+        display: flex;
+        animation-duration: 0.55s;  /* Время работы анимации */
+        animation-fill-mode: both;  /* Поведение анимации */
+        animation-name: fadeInDown;
+      }
+      a{
+        color: rgb(255,255,255, 0.5);
+        font-weight: 300;
+        font-size: 18px;
+        
+      }
+    }
+  } 
+  
+  
+  @keyframes fadeInDown { /* Сама анимация */
+    0% {                /* Старт анимации */
+        opacity: 0;
+        transform: translate3d(-100%, 0px, 0px);
+    }
+    100% {              /* в финале анимации - финал это заданная 0.55s */
+        opacity: 1;
+        transform: none;
+    }
+  }
+  
+  header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(335deg, rgba(255,255,255,1) 20%, rgba(0,0,0,1) 20%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 200;
+    .link{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      input{
+        background-color: black;
+        background-image: url(/icon/Group.png);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position:97%;
+        padding: 5px;
+        width: 420px;
+        height: 40px;
+        margin-right: 20px;
+        outline: none;
+        font-size: 22px;
+        color: white;
+        border: 1px solid rgb(255,255,255, 0.5);
+      }
+      .bt{
+        img{
+          &.active{
+            filter: drop-shadow(1px 1px 1px rgb(255,207,0));
+          }
+        }
+        
+      }
+      button{
+        background-color: black;
+        border: none;
+        cursor: pointer;
+        margin-left: 20px;
+        position: relative;
+        &::before{
+          content: attr(data-count);
+          position: absolute;
+          color: white;
+          right: 19px;
+          top: 7px;
+        }
+      }
+    }
+    .logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  
+  main{
+    margin-top: 100px;
+      .merch-link{
+        ul{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          list-style-type: none;
+          a{
+            text-decoration: none;
+            color: rgba(51, 51, 51, 0.7);
+            margin-left: 5px;
+            z-index: 100;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+  }
+  
+
+  
+  
+  .footer{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 5%;
+    .container{
+      display: flex;
+      flex-direction: column;
+      .form-row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        button{
+          background-color: black;
+          border: 1px solid white;
+          color: white;
+          padding: 10px;
+          font-size: 17px;
+          cursor: pointer;
+        }
+        input{
+          background-color: black;
+          border: 1px solid white;
+          color: white;
+          padding: 10px;
+          font-size: 17px;
+          margin-right: 10px;
+        }
+      }
+      h2{
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-align: center;
+      }
+    }
+    .link{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+      h2{
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+      }
+      img{
+        width: 40px;
+        margin-top: 4%;
+        margin-left: 10px;
+      }
+    }
+  }
+
+
+
+
+//СТИЛЬ ДЛЯ ВСПЛЫВАЮЩЕЙ СТРАНИЦЫ
+@keyframes show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.page{
+  background-color:white; 
+  z-index: 110;
+  width: 100%;
+  display: block;
+  animation: show .5s linear;
+  &.active{
+    display: block;
+  }
+  .page-block{
+    background-color: rgba(64, 64, 64, 1);
+    margin: 50px;
+    margin-top: 20px;
+    
+  }
+  .page-content{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 100px;
+    .swiper {
+      width: 500px;
+      height: 650px;
+      margin-top: -160px;
+      &:nth-of-type(1){
+        height: 200px;
+        width: 400px;
+        transform: rotate(90deg);
+        margin-top: 0px;
+      }
+    }
+
+    .swiper-slide {
+      
+      text-align: center;
+      font-size: 18px;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 80%;
+      height: 70%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-button-next , .swiper-button-prev{
+      color: white;
+    }
+
+    .page-content__description{
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      h2{
+        margin-top: -70px;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+      h1{
+        font-weight: 400;
+      }
+      p{
+        width: 400px;
+        line-height: 25px;
+        font-size: 15px;
+        margin-top: 20px;
+      }
+      .description__size{
+        p{
+          margin-top: 20px;
+        }
+        .size{
+          margin-top: 10px;
+          button{
+            margin-top: 10px;
+            margin: 3px;
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid white;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 10px;
+            padding: 3px;
+            &:hover{
+              box-shadow: 1px 1px 15px black;
+            }
+            &.active{
+              background-color: #FFCF00;
+            }
+          }
+          
+        }
+      }
+      .color{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
+        .color-block{
+          width: 150px;
+          .color-product{
+            margin-top: 10px;
+            box-shadow: 1px 1px 5px black;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+           // background-color: turquoise;
+          }
+        }
+        button{
+          background-color: #FFCF00;
+          border-radius: 5px;
+          border: none;
+          padding: 10px;
+          font-size: 18px;
+          width: 150px;
+          cursor: pointer;
+          transition: .5s;
+          &:hover{
+            background-color: #e0e0e0;
+          }
+        }
+      }
+    }
+  }
+
+  .recommen{
+    h3{
+      color: white;
+      margin-left: 100px;
+      font-weight: 300;
+      margin-top: 80px;
+    }
+    .swiper {
+      width: 90%;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-button-next , .swiper-button-prev{
+      color: white;
+    }
+  }
+}

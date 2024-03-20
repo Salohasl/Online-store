@@ -1,55 +1,35 @@
-import catalogAston from './arrCatalog.js';
-/*Выбор данных из массива объектов*/
-
-//В переменной хранится каталог
-let productAston  = catalogAston;
 
 let productCatal = document.querySelectorAll('.product-hover');
 
-let page = document.querySelector('.page');
-
-let command = document.querySelector('.command');
-let size = document.querySelector('.size');
-
-let name = document.querySelector('.name')
-let swiperTwo = document.querySelectorAll('.swiper-two');
+let datasetGender;
+const productArray = [];
 function addPage(){
 
         productCatal.forEach(item => {
             item.addEventListener('click', (event)=>{
-
+                
                 if(event.target.className == 'img-hover'){
 
-                    page.classList.add('active');
-                    document.getElementById('container').style.display = 'none';
-                    
-                    for(swiper of swiperTwo){
-                        let img = document.createElement('img');
-                        img.src = item.dataset.img;
-                        swiper.append(img);
-                    // console.log(swiper);
-                    }
-                
-
-                    command.textContent = item.dataset.command;
-        
-                    let arr = item.dataset.size.split(',');
-                    for(let arrSize of arr){
-                        let buttonSize = document.createElement('button');     
-                        if(arr == 'undefined'){
-                            buttonSize.textContent = '-';
-                        }else{
-                            buttonSize.textContent = arrSize;
-                        }
-                        size.append(buttonSize);
-                    }
-                    
-        
                     if(item.dataset.gender == 'undefined'){
-                        name.textContent = item.dataset.name + ' ' + 'Унисекс';
+                        datasetGender = item.dataset.name + ' ' + 'Унисекс';
                     }else{
-                        name.textContent = item.dataset.name + ' ' + item.dataset.gender;
+                        datasetGender = item.dataset.name + ' ' + item.dataset.gender;
                     }
+
+                    const productObj = {
+                        command: item.dataset.command, 
+                        gender: datasetGender,
+                        description: item.dataset.full,
+                        size:  item.dataset.size.split(','),
+                        color: item.dataset.color,
+                        id: item.dataset.id
+                    }
+                    
+                    productArray.push(productObj);
+                    console.log(productArray)
+                    localStorage.setItem('page', JSON.stringify(productArray));
+
+                    window.location.href = '/product/product.html';
                 }
                 
     
