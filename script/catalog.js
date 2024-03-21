@@ -99,6 +99,8 @@ function productUnloading(){
         productHover.setAttribute('data-color', key.color);
         productHover.setAttribute('data-full', key.full);
         productHover.setAttribute('data-id', key.id);
+        productHover.setAttribute('data-price', key.price);
+        productHover.setAttribute('data-desc', key.description);
         productCatal.prepend(productHover);
    
         let imgHover = document.createElement('img');

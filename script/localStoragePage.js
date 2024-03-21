@@ -1,7 +1,7 @@
 function addToCartLocalStorage(){
 
-    let basketBtn = document.querySelectorAll('.basket-hover');
-
+    let basketBtn = document.querySelector('.basket-hover');
+    
     let sizeButton = document.querySelectorAll('.size-button');
 
     sizeButton.forEach(btn => {
@@ -13,11 +13,10 @@ function addToCartLocalStorage(){
                 btn.classList.add('active');
             }
 
-            for(let elem of basketBtn){
-                if(btn.dataset.id == elem.dataset.id){
-                    elem.setAttribute('data-size', btn.textContent)  
-                }           
-            }
+            if(btn.dataset.id == basketBtn.dataset.id){
+                basketBtn.setAttribute('data-size', btn.textContent)  
+            }           
+
 
         })
     })
@@ -26,44 +25,44 @@ function addToCartLocalStorage(){
 
     let datasetGender;
 
-    const productArray = [];
 
-    basketBtn.forEach(elem => {
-        elem.addEventListener('click', function click(event) {
 
-            if(elem.dataset.size === undefined){
+        basketBtn.addEventListener('click', function click(event) {
+
+            if(basketBtn.dataset.size === undefined){
                 alert('Пожалуйста выберите размер')
             }else{
 
-                if(elem.dataset.gender !== 'undefined'){
-                    datasetGender = elem.dataset.gender;
+                if(basketBtn.dataset.gender !== 'undefined'){
+                    datasetGender = basketBtn.dataset.gender;
                 }else{
                     datasetGender = 'Унисекс';
                 }
 
 
-                elem.classList.add('active');
+                basketBtn.classList.add('active');
 
-                const productObjMan = {
-                    id: elem.dataset.id,
-                    name: elem.dataset.name,
+                const productObjPage = {
+                    id: basketBtn.dataset.id,
+                    name: basketBtn.dataset.name,
                     gender: datasetGender, 
-                    description: elem.dataset.description,
-                    price: elem.dataset.price,
-                    size: elem.dataset.size
+                    description: basketBtn.dataset.description,
+                    price: basketBtn.dataset.price,
+                    size: basketBtn.dataset.size
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];
-                products.push(productObjMan);
+                products.push(productObjPage);
                 localStorage.setItem('product', JSON.stringify(products));
 
-                elem.removeEventListener('click', click)
+                basketBtn.removeEventListener('click', click)
+
+                alert('Товар добавлен');
             }
             
             
             
         })
-    })
   }
   
   addToCartLocalStorage();

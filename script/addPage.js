@@ -19,10 +19,14 @@ function addPage(){
                     const productObj = {
                         command: item.dataset.command, 
                         gender: datasetGender,
+                        genderH: item.dataset.gender,
                         description: item.dataset.full,
                         size:  item.dataset.size.split(','),
                         color: item.dataset.color,
-                        id: item.dataset.id
+                        id: item.dataset.id,
+                        price: item.dataset.price,
+                        desc: item.dataset.desc,
+                        name: item.dataset.name
                     }
                     
                     productArray.push(productObj);

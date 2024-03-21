@@ -5,13 +5,13 @@ import catalogAston from './arrCatalog.js';
 let productAstons  = catalogAston;
 const paymentPrice = document.querySelector('.payment-price');
 
+
+
 function removeToCartLocalStorage() {
     const table = document.querySelector('table');
     let productCatalog = JSON.parse(localStorage.getItem('product')) || []; // Инициализация пустым массивом, если в localStorage нет данных
-    let productMan = JSON.parse(localStorage.getItem('productMan')) || []; // Инициализация пустым массивом, если в localStorage нет данных
-    let productWomen = JSON.parse(localStorage.getItem('productWomen')) || []; // Инициализация пустым массивом, если в localStorage нет данных
-    let productKids = JSON.parse(localStorage.getItem('productKids')) || [];
-    let savedProduct = [...productCatalog, ... productMan, ...productWomen, ...productKids];
+    let savedProduct = [...productCatalog];
+      
     let num;
     for (let product of savedProduct) {
         let tr = document.createElement('tr');

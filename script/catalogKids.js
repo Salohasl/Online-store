@@ -88,6 +88,21 @@ function productUnloading(){
         function creatingBlocksHover(){
           let productHover = document.createElement('div');
           productHover.classList.add('product-hover');
+          productHover.setAttribute('data-category', key.category);
+        productHover.setAttribute('data-pilot', key.pilot);
+        productHover.setAttribute('data-size', key.size);
+        productHover.setAttribute('data-command', key.command);
+        productHover.setAttribute('data-name', key.name);
+        productHover.setAttribute('data-gender', key.gender);
+        productHover.setAttribute('data-img', key.src);
+        productHover.setAttribute('data-img1', key.srcHover);
+        productHover.setAttribute('data-img2', key.img2);
+        productHover.setAttribute('data-img3', key.img);
+        productHover.setAttribute('data-color', key.color);
+        productHover.setAttribute('data-full', key.full);
+        productHover.setAttribute('data-id', key.id);
+        productHover.setAttribute('data-price', key.price);
+        productHover.setAttribute('data-desc', key.description);
           productCatal.prepend(productHover);
 
           let imgHover = document.createElement('img');

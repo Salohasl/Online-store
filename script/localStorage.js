@@ -53,9 +53,13 @@ function addToCartLocalStorage(){
                     size: elem.dataset.size
                 }
                 
-                productArray.push(productObj);
-                console.log(productArray)
-                localStorage.setItem('product', JSON.stringify(productArray));
+                let products = JSON.parse(localStorage.getItem('product')) || [];
+                products.push(productObj);
+                localStorage.setItem('product', JSON.stringify(products));
+
+                //productArray.push(productObj);
+                //console.log(productArray)
+                //localStorage.setItem('product', JSON.stringify(productArray));
 
                 elem.removeEventListener('click', click)
             }

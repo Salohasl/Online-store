@@ -71,20 +71,11 @@
     </div>
     <div class="page-block">
       <div class="page-content">
-        <!-- Swiper rotate-->
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              Slide 1
-              Slide 1
-              Slide 2
-            </div>
-            <div class="swiper-slide">Slide 2</div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-
+        <!-- Swiper-->
+        <div class="rotate">
+            <div class="slider" id="rotate1"></div>
         </div>
+
 
         <!-- Swiper-->
         <div class="swiper mySwiper">
@@ -114,7 +105,7 @@
                 <p>Цвет</p>
                 <div class="color-product"></div>
               </div>
-              <button>в корзину</button>
+              <button class="basket-hover">в корзину</button>
             </div>
         </div>
         
@@ -125,10 +116,8 @@
         <!-- Swiper-->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
+            <div class="swiper-slide" id="container"><a href ="#"></a></div>
+            <div class="swiper-slide"id="container1"><a href ="#"></a></div>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
@@ -201,8 +190,10 @@
 
 
 <!-- Swiper JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type="module" src="/script/addPageSwiper.js"></script>
+<script type="module" src="/script/localStoragePage.js"></script>
 <script src="/script/up.js"></script>
 </body>
 </html>

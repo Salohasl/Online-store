@@ -44,7 +44,7 @@ function addToCartLocalStorage(){
 
                 elem.classList.add('active');
 
-                const productObj = {
+                const productObjKids = {
                     id: elem.dataset.id,
                     name: elem.dataset.name,
                     gender: datasetGender, 
@@ -53,9 +53,9 @@ function addToCartLocalStorage(){
                     size: elem.dataset.size
                 }
                 
-                productArray.push(productObj);
-                console.log(productArray)
-                localStorage.setItem('productKids', JSON.stringify(productArray));
+                let products = JSON.parse(localStorage.getItem('product')) || [];
+                products.push(productObjKids);
+                localStorage.setItem('product', JSON.stringify(products));
 
                 elem.removeEventListener('click', click)
             }
