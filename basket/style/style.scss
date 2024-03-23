@@ -272,6 +272,9 @@
                   gap: 20px;
                   p{
                     font-size: 20px;
+                    &:nth-of-type(3){
+                      font-size: 15px;
+                    }
                   }
                 }
                 .table-item__size{
@@ -280,6 +283,22 @@
                   align-items: center;
                   justify-content: center;
                   gap: 20px;
+                  .color{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    border: 1px solid white;
+                  }
+                  .button-size{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 15px;
+                    border: 1px solid white;
+                    background-color: rgb(255,207,0, 0);
+                    color: white;
+                    font-size: 10px;
+                    padding: 1px;
+                  }
                   p{
                     color: rgba(184, 184, 184, 0.9);
                   }
@@ -393,12 +412,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            a{
+              text-decoration: none;
+            }
             .recommen-item{
               display: flex;
               flex-direction: row;
               align-items: flex-start;
               justify-content: center;
               margin: 20px;
+             
               img{
                 width: 100px;
               }

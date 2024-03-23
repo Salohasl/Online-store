@@ -48,6 +48,7 @@ function removePageLocalStorage(){
     basketBtn.setAttribute('data-price', page.price);
     basketBtn.setAttribute('data-name', page.name);
     basketBtn.setAttribute('data-description', page.desc);
+    basketBtn.setAttribute('data-color', page.color);
 
     let arr = page.size;
     for(let arrSize of arr){
@@ -71,9 +72,9 @@ function removePageLocalStorage(){
         //imgRotate1.src = product.src;
         divRotate1.innerHTML = `
           <img class="delete-img" src="${product.srcHover}" data-atr="1">
-          <img class="delete-img" src="${product.src}" data-atr="2">
-          <img class="delete-img" src="${product.img}" data-atr="3">
-          <img class="delete-img" src="${product.img2}" data-atr="4">
+          <img class="delete-img remove" src="${product.src}" data-atr="0">
+          <img class="delete-img" src="${product.img}" data-atr="2">
+          <img class="delete-img" src="${product.img2}" data-atr="3">
         `;
         document.getElementById('rotate1').append(divRotate1);
 
@@ -281,10 +282,39 @@ function recommen() {
  
  recommen();
  
+function insertingImg(){
+  let deleteImg = document.querySelectorAll('.delete-img');
+  //let active = document.querySelector('.swiper-slide-active');
 
-let deleteImg = document.querySelectorAll('.delete-img');
-let slideImg = document.querySelectorAll('.slide-img');
-for(let slide of slideImg){
+  let btnNext = document.querySelector('.swiper-button-next');
+  btnNext.addEventListener('click', ()=>{
+    let active = document.querySelector('.swiper-slide-active');
+ 
+    for(let elem of deleteImg){
+      if(elem.dataset.atr == active.dataset.swiperSlideIndex){
+        elem.classList.add('remove');
+      }else{
+        elem.classList.remove('remove');
+      }
+    }
+
+  })
+
+  let btnPrev = document.querySelector('.swiper-button-prev');
+  btnPrev.addEventListener('click', ()=>{
+    let active = document.querySelector('.swiper-slide-active');
+
+    for(let elem of deleteImg){
+      if(elem.dataset.atr == active.dataset.swiperSlideIndex){
+        elem.classList.add('remove');
+      }else{
+        elem.classList.remove('remove');
+      }
+    }
+
+  })
   
 }
+insertingImg();
+
 

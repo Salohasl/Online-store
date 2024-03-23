@@ -398,6 +398,23 @@ main .merch-link ul a:hover {
   position: relative;
 }
 
+@-webkit-keyframes rotate {
+  from {
+    flex-grow: 1;
+  }
+  to {
+    flex-grow: 2;
+  }
+}
+
+@keyframes rotate {
+  from {
+    flex-grow: 1;
+  }
+  to {
+    flex-grow: 2;
+  }
+}
 .product-catal {
   margin: 20px;
   width: 200px;

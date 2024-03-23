@@ -147,6 +147,7 @@ function productUnloading(){
           basketBtn.setAttribute('data-name', key.name);
           basketBtn.setAttribute('data-description', key.description);
           basketBtn.setAttribute('data-id', key.id);
+          basketBtn.setAttribute('data-color', key.color);
           basketBtn.classList.add('basket-hover');
           productHover.append(basketBtn);
           let basketImg = document.createElement('img');

@@ -1,4 +1,5 @@
 function addToCartLocalStorage(){
+    const bt = document.querySelector('.bt img');
 
     let basketBtn = document.querySelector('.basket-hover');
     
@@ -33,6 +34,9 @@ function addToCartLocalStorage(){
                 alert('Пожалуйста выберите размер')
             }else{
 
+               
+                bt.classList.add('active');
+
                 if(basketBtn.dataset.gender !== 'undefined'){
                     datasetGender = basketBtn.dataset.gender;
                 }else{
@@ -48,7 +52,8 @@ function addToCartLocalStorage(){
                     gender: datasetGender, 
                     description: basketBtn.dataset.description,
                     price: basketBtn.dataset.price,
-                    size: basketBtn.dataset.size
+                    size: basketBtn.dataset.size,
+                    color: basketBtn.dataset.color
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];

@@ -11,7 +11,6 @@ const applyBtn = document.querySelector('.applyBtn');
 //Выбор Категории
 const radio = document.querySelectorAll('.cloth');
 
-
 //Сброс всех настроек в фильтре
 const resetBtn = document.querySelector('.reset');
 resetBtn.addEventListener('click', ()=>{
@@ -30,20 +29,20 @@ function productUnloading(){
       productCatal.setAttribute('data-command', key.command);
       productCatal.setAttribute('data-name', key.name);
       product.append(productCatal);
-
       //Создание массива для категорий одежды, категорий пилотов
       let res = [];
       res.push(productCatal.dataset.category)
       res.push(productCatal.dataset.pilot);
       res.push(productCatal.dataset.command);
-      res.push(productCatal.dataset.size);
+      res.push(productCatal.dataset.size.split(','));
       res = res.filter(item => item !== 'undefined');
-      
+
+
       //Настройка фильтрации одежды по radio
         radio.forEach(elem => {
-          elem.addEventListener('click', ()=>{     
+          elem.addEventListener('click', ()=>{    
             applyBtn.addEventListener('click', ()=>{
-              //скрытие пагинации res.includes(elem.value)
+              //скрытие пагинации
               document.getElementById('pag-cont').style.display = 'none';
               if(res.includes(elem.value)){
                 productCatal.style.display = 'block';
@@ -145,6 +144,7 @@ function productUnloading(){
         basketBtn.setAttribute('data-name', key.name);
         basketBtn.setAttribute('data-description', key.description);
         basketBtn.setAttribute('data-id', key.id);
+        basketBtn.setAttribute('data-color', key.color);
         basketBtn.classList.add('basket-hover');
         productHover.append(basketBtn);
         let basketImg = document.createElement('img');

@@ -373,13 +373,18 @@ main .merch-link ul a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   transform: rotate(-90deg);
 }
 .page .page-content .rotate .div-img img {
   width: 130px;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-animation: showSlide 1s linear;
+          animation: showSlide 1s linear;
+}
+.page .page-content .rotate .div-img img.remove {
+  display: none;
 }
 .page .page-content .mySwiper {
   width: 130%;
@@ -530,4 +535,22 @@ main .merch-link ul a:hover {
 }
 .page .recommen .swiper-button-next, .page .recommen .swiper-button-prev {
   color: white;
+}
+
+@-webkit-keyframes showSlide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showSlide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */

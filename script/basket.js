@@ -46,13 +46,21 @@ function removeToCartLocalStorage() {
         `;
         divTwo.append(desc);
 
+
         const size = document.createElement('div');
         size.classList.add('table-item__size');
         size.innerHTML = `
+            <p>цвет</p>
+            <div class="color"></div>
             <p>размер</p>
-            <p>${product.size}</p>
+            <button class="button-size">${product.size}</button>
         `;
         divTwo.append(size);
+        let colors = document.querySelectorAll('.color');
+        for(let color of colors){
+            color.style.backgroundColor += product.color;
+        }
+        
 
         const minMax = document.createElement('div');
         minMax.classList.add('min-max');
@@ -88,34 +96,6 @@ function removeToCartLocalStorage() {
                 productCatalog.splice(index, 1);
                 // Обновляем данные в localStorage
                 localStorage.setItem('product', JSON.stringify(productCatalog));
-            }
-
-            // Находим индекс продукта в массиве savedProduct
-            const index1 = productMan.findIndex(p => p.name === product.name);
-            if (index1 !== -1) {
-                // Удаляем продукт из массива
-                productMan.splice(index1, 1);
-                // Обновляем данные в localStorage
-                localStorage.setItem('productMan', JSON.stringify(productMan));
-            }
-
-            // Находим индекс продукта в массиве savedProduct
-            const index2 = productWomen.findIndex(p => p.name === product.name);
-            if (index2 !== -1) {
-                // Удаляем продукт из массива
-                productWomen.splice(index2, 1);
-                // Обновляем данные в localStorage
-                localStorage.setItem('productWomen', JSON.stringify(productWomen));
-            }
-
-
-            // Находим индекс продукта в массиве savedProduct
-            const index3 = productKids.findIndex(p => p.name === product.name);
-            if (index3 !== -1) {
-                // Удаляем продукт из массива
-                productKids.splice(index3, 1);
-                // Обновляем данные в localStorage
-                localStorage.setItem('productKids', JSON.stringify(productKids));
             }
 
 
@@ -163,12 +143,29 @@ function recommen(){
         container.innerHTML = ''; // Очищаем контейнер перед добавлением новых блоков
 
         blocks.forEach(block => {
-            const div = document.createElement('div');
-            div.classList.add('recommen-item')
-            div.innerHTML = `
+            const link = document.createElement('a');
+            link.setAttribute('href', "/product/product.html");
+            link.setAttribute('data-full', block.full);
+            link.setAttribute('data-id', block.id);
+            link.setAttribute('data-color', block.color);
+            link.setAttribute('data-size', block.size);
+            link.setAttribute('data-command', block.command);
+            link.setAttribute('data-name', block.name);
+            link.setAttribute('data-gender', block.gender);
+            link.setAttribute('data-price', block.price);
+            link.setAttribute('data-desc', block.description);
+            link.classList.add('recommen-item')
+            link.innerHTML = `
                 <img src="${block.src}" alt="${block.name}">
             `;
-            container.appendChild(div);
+            container.appendChild(link);
+
+            let gender;
+            if(block.gender == undefined){
+                gender = 'Унисекс';
+            }else{
+                gender = block.gender;
+            }
 
             const divMin = document.createElement('div');
             divMin.classList.add('recommen-item__text');
@@ -177,9 +174,36 @@ function recommen(){
                 <p>${block.command}</p>
                 <p>${block.price}</p>
             `;
-            div.append(divMin);
+            link.append(divMin);
 
-            
+            link.addEventListener('click', ()=>{
+                let  productArray = [];
+                let datasetGender;
+                if(block.gender == undefined){
+                  datasetGender = link.dataset.name + ' ' + 'Унисекс';
+                }else{
+                    datasetGender = link.dataset.name + ' ' + link.dataset.gender;
+                }
+    
+                const productObj = {
+                    command: link.dataset.command, 
+                    description: link.dataset.full,
+                    size:  link.dataset.size.split(','),
+                    color: link.dataset.color,
+                    id: link.dataset.id,
+                    name: link.dataset.name,
+                    gender: datasetGender, 
+                    desc: link.dataset.desc,
+                    price: link.dataset.price,
+                }
+    
+    
+                productArray.push(productObj);
+                console.log(productArray)
+                localStorage.setItem('page', JSON.stringify(productArray));
+    
+            })
+
         });
     }
 

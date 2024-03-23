@@ -50,7 +50,8 @@ function addToCartLocalStorage(){
                     gender: datasetGender, 
                     description: elem.dataset.description,
                     price: elem.dataset.price,
-                    size: elem.dataset.size
+                    size: elem.dataset.size,
+                    color: elem.dataset.color
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];
@@ -58,6 +59,8 @@ function addToCartLocalStorage(){
                 localStorage.setItem('product', JSON.stringify(products));
 
                 elem.removeEventListener('click', click)
+
+                alert('Товар добавлен');
             }
             
             

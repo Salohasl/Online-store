@@ -12,7 +12,7 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="icon" href="/icon/logo.png" type="image/svg+xml">
-<link rel="stylesheet" href="/favorites/style/style.css">
+<link rel="stylesheet" href="/basket/style/style.css">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
@@ -46,7 +46,7 @@
     <div class="link">
       <input type="search" name="q" id="site-search" placeholder="Поиск">
       <a href="/favorites/favorites.html"><button><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
-      <a href="/basket/basket.html"><button class="bt" ><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
+      <a href="/basket/basket.html"><button class="bt"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
 
     <div class="logo">
@@ -69,28 +69,17 @@
     <div class="wrapper">
       <div class="wrapper-basket">
         <div class="basket">
-          <h2>Корзина</h2>
+          <h2>Избранное</h2>
           <table>
-            <tr>
-              <td>
-                <div class="close">
-                  <span></span>
-                  <span></span>
-                </div>
-                lorem
-              </td>
-              <td>
-                <span class="price">9999</span> р
-              </td>
-            </tr>
+
           </table>
         </div>
-        <div class="payment">
+        <div class="payment" style="display: none;">
           <h3>Итого к оплате</h3>
-          <p><span class="payment-price">9999</span> р</p>
+          <p><span class="payment-price">0</span> р</p>
         </div>
         <div class="decor">
-          <a href="#">
+          <a href="/basket/basket.html">
             Перейти к оформлению
             <div class="decor-line">
               <span></span>
@@ -101,9 +90,13 @@
       </div>
       <div class="recommen">
         <h2>Рекомендуемое</h2>
+        <div class="recommen-block" id="container">
+
+
+        </div>
       </div>
     </div>
-    
+ 
   </main>
   
   <footer class="footer">
@@ -162,9 +155,8 @@
 
   </script>
 
-
+<script type="module" src="/script/basket.js"></script>
 <script src="/script/up.js"></script>
-<script src="/script/showFilter.js"></script>
 </body>
 </html>
 

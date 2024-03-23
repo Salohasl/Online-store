@@ -26,8 +26,6 @@ function addToCartLocalStorage(){
 
     let datasetGender;
 
-    const productArray = [];
-
     basketBtn.forEach(elem => {
         elem.addEventListener('click', function click(event) {
 
@@ -50,18 +48,17 @@ function addToCartLocalStorage(){
                     gender: datasetGender, 
                     description: elem.dataset.description,
                     price: elem.dataset.price,
-                    size: elem.dataset.size
+                    size: elem.dataset.size,
+                    color: elem.dataset.color
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];
                 products.push(productObj);
                 localStorage.setItem('product', JSON.stringify(products));
 
-                //productArray.push(productObj);
-                //console.log(productArray)
-                //localStorage.setItem('product', JSON.stringify(productArray));
-
                 elem.removeEventListener('click', click)
+
+                alert('Товар добавлен');
             }
             
             
@@ -73,5 +70,3 @@ function addToCartLocalStorage(){
   addToCartLocalStorage();
 
 
-
-  //По клику на размер добавлять в атрибут кнопки корзины и сохранять в локалке

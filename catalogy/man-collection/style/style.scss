@@ -255,7 +255,7 @@ main{
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-
+  
   .filter-btn{
     display: flex;
     flex-direction: column-reverse;
@@ -284,7 +284,6 @@ main{
     }
   }
   .filter{
-   //   background-color: rgba(0, 0, 0, 1);
       display: none;
       height: 1200px;
       border-left: 300px solid rgba(0, 0, 0, .8);
@@ -388,6 +387,14 @@ main{
       position: relative;
   }
 }
+@keyframes rotate {
+  from {
+    flex-grow: 1;
+ }
+ to {
+    flex-grow: 2;
+ }
+ }
 .product-catal{
 margin: 20px;
 width: 200px;
