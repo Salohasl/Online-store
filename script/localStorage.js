@@ -27,7 +27,7 @@ function addToCartLocalStorage(){
     let datasetGender;
 
     basketBtn.forEach(elem => {
-        elem.addEventListener('click', function click(event) {
+        elem.addEventListener('click', function click() {
 
             if(elem.dataset.size === undefined){
                 alert('Пожалуйста выберите размер')

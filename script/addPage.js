@@ -1,11 +1,11 @@
 
-let productCatal = document.querySelectorAll('.product-hover');
+let productHover = document.querySelectorAll('.product-hover');
 
 let datasetGender;
 const productArray = [];
 function addPage(){
 
-        productCatal.forEach(item => {
+        productHover.forEach(item => {
             item.addEventListener('click', (event)=>{
                 
                 if(event.target.className == 'img-hover'){

@@ -1,8 +1,12 @@
 function showFilter(){
-    const filter = document.querySelector('.filter');
-    document.getElementById('filter-btn').style.display = 'none';
-    filter.classList.add('active');
+    let filterBtn = document.getElementById('filter-btn');
+    filterBtn.addEventListener('click', ()=>{
+        const filter = document.querySelector('.filter');
+        filterBtn.style.display = 'none';
+        filter.classList.add('active');
+    })
 }
+showFilter();
 
 function shadowButton(){
     const sizeBtn = document.querySelectorAll('.sizeBtn');

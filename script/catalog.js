@@ -6,52 +6,20 @@ let productAston  = catalogAston;
 
 const product = document.querySelector('.product');
 
-//Для фильтрации каталога
-const applyBtn = document.querySelector('.applyBtn');
-//Выбор Категории
-const radio = document.querySelectorAll('.cloth');
-
-//Сброс всех настроек в фильтре
-const resetBtn = document.querySelector('.reset');
-resetBtn.addEventListener('click', ()=>{
-  location.reload();
-})
-
 //Функция выгрузки товара
 function productUnloading(){
     for(let key of productAston){
 
       let productCatal = document.createElement('div');
       productCatal.classList.add('product-catal');
+      productCatal.setAttribute('id', 'product-catal');
       productCatal.setAttribute('data-category', key.category);
       productCatal.setAttribute('data-pilot', key.pilot);
       productCatal.setAttribute('data-size', key.size);
       productCatal.setAttribute('data-command', key.command);
       productCatal.setAttribute('data-name', key.name);
       product.append(productCatal);
-      //Создание массива для категорий одежды, категорий пилотов
-      let res = [];
-      res.push(productCatal.dataset.category)
-      res.push(productCatal.dataset.pilot);
-      res.push(productCatal.dataset.command);
-      res.push(productCatal.dataset.size.split(','));
-      res = res.filter(item => item !== 'undefined');
-
-
-      //Настройка фильтрации одежды по radio
-        radio.forEach(elem => {
-          elem.addEventListener('click', ()=>{    
-            applyBtn.addEventListener('click', ()=>{
-              //скрытие пагинации
-              document.getElementById('pag-cont').style.display = 'none';
-              if(res.includes(elem.value)){
-                productCatal.style.display = 'block';
-              }else{
-                productCatal.style.display = 'none';
-              }    
-            })
-          })
-        })
+      
 
 
 
@@ -162,6 +130,8 @@ function productUnloading(){
 
 
     }
+
+    
 }
 productUnloading();
 
@@ -270,3 +240,6 @@ function pagination(){
   });
 }
 pagination();
+
+
+
