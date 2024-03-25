@@ -45,7 +45,10 @@
   </nav>
 
     <div class="link">
-      <input type="search" name="q" id="site-search" placeholder="Поиск">
+      <form class="search">
+        <input type="search" name="q" value=""  id="site-search" placeholder="Поиск...">
+        <button type="submit"></button>
+      </form>
       <a href="/favorites/favorites.html"><button><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
       <a href="/basket/basket.html"><button class="bt"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
@@ -97,8 +100,18 @@
             Выпускается в яркой цветовой гамме Papaya с черным линейным оформлением классического логотипа, 
             тщательно выполненного с использованием высококачественной печати.</p>
             <div class="description__size">
-              <p>Размер</p>
-              <div class="size"></div>
+              <div class="size-block">
+                <p>Размер</p>
+                <div class="size"></div>
+              </div>
+              <div class="size-table">
+                <p>Таблица размеров</p>
+                <div class="size-table__circle">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                </div>
+              </div>
             </div>
             <div class="color">
               <div class="color-block">
@@ -145,12 +158,19 @@
                   <div class="invalid-feedback"></div>
                 </div>
               
+                <!-- Сообщение об ошибке -->
+                <div class="form-error form-error_hide" style="display: none;">Исправьте данные и отправьте форму ещё раз.</div>
                   <!-- Кнопка для отправки формы на сервер -->
                   <div class="form-submit">
                     <button id="buttonForm" type="submit">Подписаться</button>
                   </div>
                 </div>
         </form>
+         <!-- Сообщение об успешной отправки формы -->
+         <div class="form-success form-success_hide"  style="display: none;">
+          <div class="form-success__message">Форма успешно отправлена. Нажмите <button type="button"
+              class="form-success__btn">здесь</button>, если нужно отправить ещё одну форму.</div>
+        </div>
       </div>
   </div>
   <div class="link">

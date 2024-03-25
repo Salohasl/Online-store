@@ -1,4 +1,4 @@
-function addToCartLocalStorage(){
+export function addToCartLocalStorage(){
 
     let basketBtn = document.querySelectorAll('.basket-hover');
 

@@ -187,20 +187,39 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      input{
-        background-color: black;
-        background-image: url(/icon/Group.png);
-        background-repeat: no-repeat;
-        background-size: 20px;
-        background-position:97%;
-        padding: 5px;
-        width: 420px;
-        height: 40px;
-        margin-right: 20px;
-        outline: none;
-        font-size: 22px;
-        color: white;
-        border: 1px solid rgb(255,255,255, 0.5);
+      .search{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        input {
+          padding: 5px;
+          width: 300px;
+          height: 40px;
+          margin-right: 20px;
+          outline: none;
+          font-size: 22px;
+          color: white;
+          background-color: black;
+          border: 1px solid rgb(255,255,255, 0.5);
+        }
+         button {
+          right: 10px;
+          position: absolute;
+          width: 42px;
+          height: 40px;
+          border: none;
+          background-color: black;
+
+          border: 1px solid rgb(255,255,255, 0.5);
+          cursor: pointer;
+          background-image: url(/icon/Group.png);
+          background-repeat: no-repeat;
+          background-size: 20px;
+          background-position:center;
+          border-left: none;
+        }
       }
       .bt{
         img{
@@ -417,17 +436,25 @@
       p{
         width: 400px;
         line-height: 25px;
-        font-size: 15px;
+        font-size: 14px;
         margin-top: 20px;
         margin-right: 20px;
     
       }
       .description__size{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 50px;
         p{
           margin-top: 20px;
+          width: auto;
+          font-size: 16px;
         }
         .size{
           margin-top: 10px;
+          width: 200px;
           button{
             margin-top: 10px;
             margin: 3px;
@@ -447,7 +474,27 @@
               background-color: #FFCF00;
             }
           }
-          
+        }
+        .size-table{
+          display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          .size-table__circle{
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            .circle{
+              border-radius: 5px;
+              width: 7px;
+              height: 7px;
+              background-color: #FFCF00;
+            }
+          }
         }
       }
       .color{

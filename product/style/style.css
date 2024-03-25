@@ -205,20 +205,38 @@ header .link {
   align-items: center;
   justify-content: center;
 }
-header .link input {
-  background-color: black;
-  background-image: url(/icon/Group.png);
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: 97%;
+header .link .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header .link .search input {
   padding: 5px;
-  width: 420px;
+  width: 300px;
   height: 40px;
   margin-right: 20px;
   outline: none;
   font-size: 22px;
   color: white;
+  background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.5);
+}
+header .link .search button {
+  right: 10px;
+  position: absolute;
+  width: 42px;
+  height: 40px;
+  border: none;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  background-image: url(/icon/Group.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  border-left: none;
 }
 header .link .bt img.active {
   filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
@@ -428,15 +446,25 @@ main .merch-link ul a:hover {
 .page .page-content .page-content__description p {
   width: 400px;
   line-height: 25px;
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 20px;
   margin-right: 20px;
 }
+.page .page-content .page-content__description .description__size {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 50px;
+}
 .page .page-content .page-content__description .description__size p {
   margin-top: 20px;
+  width: auto;
+  font-size: 16px;
 }
 .page .page-content .page-content__description .description__size .size {
   margin-top: 10px;
+  width: 200px;
 }
 .page .page-content .page-content__description .description__size .size button {
   margin-top: 10px;
@@ -455,6 +483,27 @@ main .merch-link ul a:hover {
   box-shadow: 1px 1px 15px black;
 }
 .page .page-content .page-content__description .description__size .size button.active {
+  background-color: #FFCF00;
+}
+.page .page-content .page-content__description .description__size .size-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.page .page-content .page-content__description .description__size .size-table .size-table__circle {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.page .page-content .page-content__description .description__size .size-table .size-table__circle .circle {
+  border-radius: 5px;
+  width: 7px;
+  height: 7px;
   background-color: #FFCF00;
 }
 .page .page-content .page-content__description .color {

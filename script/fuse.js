@@ -6,7 +6,7 @@ let productAston  = catalogAston;
 
 let siteSearch = document.getElementById('site-search');
 const fuse = new Fuse(productAston, {
-    keys: ['name']
+    keys: ['name', 'category', 'command', 'gender', 'pilot']
 });
 
 siteSearch.addEventListener('input', ()=>{

@@ -1,5 +1,7 @@
 import catalogAston from './arrCatalog.js';
 /*Выбор данных из массива объектов*/
+import { addPage } from './addPage.js';
+import { addToCartLocalStorage } from './localStorage.js';
 
 //В переменной хранится каталог
 let productAston  = catalogAston;
@@ -11,7 +13,15 @@ const radio = document.querySelectorAll('.cloth');
 
 function filterProducts(products, criteria) {
     return products.filter(product => {
-        return criteria.every(([key, value]) => product[key] === value);
+        return criteria.every(([key, value]) => {
+            // Check if the key is 'size' and if the product has a 'size' property
+            if (key === 'size' && product[key]) {
+                // Use includes to check if the selected size is included in the product's size property
+                return product[key].includes(value);
+            }
+            // For other keys, check for an exact match
+            return product[key] === value;
+        });
     });
 }
 
@@ -30,6 +40,7 @@ radio.forEach(radio => {
 function filterCatalog(){
     document.querySelector('.applyBtn').addEventListener('click', (event) => {
     
+      
         //Отключение пагинации
         document.getElementById('pag-cont').style.display = 'none';
     
@@ -38,7 +49,7 @@ function filterCatalog(){
         
         // Фильтрация продуктов по выбранным критериям
         const filteredProducts = filterProducts(productAston, criteriaArray);
-        console.log(filteredProducts)
+   
         if(filteredProducts.length == 0){
             alert('Товара нет');
             event.stopPropagation();
@@ -166,6 +177,9 @@ function filterCatalog(){
         
                 }creatingBlocksHover()
             });
+
+            addPage();
+            addToCartLocalStorage();
         }
         
     });

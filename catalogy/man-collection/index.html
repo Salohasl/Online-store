@@ -44,7 +44,10 @@
   </nav>
 
     <div class="link">
-      <input type="search" name="q" id="site-search" placeholder="Поиск">
+      <form class="search">
+        <input type="search" name="q" value=""  id="site-search" placeholder="Поиск...">
+        <button type="submit"></button>
+      </form>
       <a href="/favorites/favorites.html"><button ><img src="/icon/like.png" alt="Избранное" width="35px"></button></a>
       <a href="/basket/basket.html"><button class="bt"><img src="/icon/korzina.png" alt="Корзина" width="35px"></button></a>
     </div>
@@ -88,15 +91,15 @@
           <div class="size">
             <p>Размеры</p>
             <div class="size-btn">
-              <button class="sizeBtn cloth"  name="size" value="XS, S, M, L, XL">XS</button>
-              <button class="sizeBtn cloth" name="size" value="XS, S, M, L, XL">S</button>
-              <button class="sizeBtn cloth" name="size" value="XS, S, M, L, XL">M</button>
-              <button class="sizeBtn cloth" name="size" value="XS, S, M, L, XL, XXL">L</button>
-              <button class="sizeBtn cloth" name="size" value="S, M, L, XL, XXL, 2XL, 3XL">XL</button>
-              <button class="sizeBtn cloth" name="size" value="S, M, L, XL, XXL, 2XL, 3XL">2XL</button>
-              <button class="sizeBtn cloth" name="size" value="S, M, L, XL, XXL, 2XL, 3XL">3XL</button>
-              <button class="sizeBtn cloth" name="size" value="XS, S, M, L, XL, XXL, 3XL, 4XL, 5XL">4XL</button>
-              <button class="sizeBtn cloth" name="size" value="XS, S, M, L, XL, XXL, 3XL, 4XL, 5XL">5XL</button>
+              <button class="sizeBtn cloth"  name="size" value="XS">XS</button>
+              <button class="sizeBtn cloth" name="size" value="S">S</button>
+              <button class="sizeBtn cloth" name="size" value="M">M</button>
+              <button class="sizeBtn cloth" name="size" value="M">L</button>
+              <button class="sizeBtn cloth" name="size" value="XL">XL</button>
+              <button class="sizeBtn cloth" name="size" value="2XL">2XL</button>
+              <button class="sizeBtn cloth" name="size" value="3XL">3XL</button>
+              <button class="sizeBtn cloth" name="size" value="4XL">4XL</button>
+              <button class="sizeBtn cloth" name="size" value="5XL">5XL</button>
               <button class="sizeBtn cloth" name="size" value="6XL">6XL</button>
             </div>
           </div>
@@ -266,14 +269,20 @@
                     placeholder="введите почту">
                   <div class="invalid-feedback"></div>
                 </div>
-              
-                  <!-- Кнопка для отправки формы на сервер -->
-                  <div class="form-submit">
-                    <button id="buttonForm" type="submit">Подписаться</button>
-                  </div>
-                </div>
-        </form>
-      </div>
+              <!-- Сообщение об ошибке -->
+              <div class="form-error form-error_hide" style="display: none;">Исправьте данные и отправьте форму ещё раз.</div>
+              <!-- Кнопка для отправки формы на сервер -->
+              <div class="form-submit">
+                <button id="buttonForm" type="submit">Подписаться</button>
+              </div>
+            </div>
+    </form>
+     <!-- Сообщение об успешной отправки формы -->
+     <div class="form-success form-success_hide"  style="display: none;">
+      <div class="form-success__message">Форма успешно отправлена. Нажмите <button type="button"
+          class="form-success__btn">здесь</button>, если нужно отправить ещё одну форму.</div>
+    </div>
+  </div>
   </div>
   <div class="link">
     <h2>мы в социальных сетях</h2>

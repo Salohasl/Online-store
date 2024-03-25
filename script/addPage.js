@@ -1,10 +1,9 @@
 
-let productHover = document.querySelectorAll('.product-hover');
+export function addPage(){
+    let productHover = document.querySelectorAll('.product-hover');
 
-let datasetGender;
-const productArray = [];
-function addPage(){
-
+    let datasetGender;
+    const productArray = [];
         productHover.forEach(item => {
             item.addEventListener('click', (event)=>{
                 
