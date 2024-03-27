@@ -9,6 +9,12 @@ link.classList.remove('active');
 });
 
 
-function popupText(){
+let linkMouse = document.querySelector('.link-muose');
+linkMouse.addEventListener('mouseover', ()=>{
     link.classList.add('active');
-}
+})
+linkMouse.addEventListener('mouseout', ()=>{
+    link.classList.remove('active');
+})
+
+

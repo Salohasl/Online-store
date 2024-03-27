@@ -4,18 +4,22 @@ export function addToCartLocalStorage(){
 
     let sizeButton = document.querySelectorAll('.size-button');
 
+    
+
     sizeButton.forEach(btn => {
         btn.addEventListener('click', ()=>{
-            for(let btnElem of sizeButton){
-                if(btnElem != btn){
-                    btnElem.classList.remove('active');
-                }
-                btn.classList.add('active');
-            }
+           
 
             for(let elem of basketBtn){
                 if(btn.dataset.id == elem.dataset.id){
-                    elem.setAttribute('data-size', btn.textContent)  
+                    elem.dataset.size = btn.textContent;
+                    btn.classList.add('active');
+                    for(let btnElem of sizeButton){
+                        if(btnElem != btn && btnElem.textContent != '-'){
+                            btnElem.classList.remove('active');
+                        }
+                    
+                    }
                 }           
             }
 
@@ -26,12 +30,11 @@ export function addToCartLocalStorage(){
 
     let datasetGender;
 
-    const productArray = [];
-
     basketBtn.forEach(elem => {
-        elem.addEventListener('click', function click(event) {
+        elem.addEventListener('click', function click() {
 
-            if(elem.dataset.size === undefined){
+
+            if(elem.dataset.size === ''){
                 alert('Пожалуйста выберите размер')
             }else{
 
@@ -44,7 +47,7 @@ export function addToCartLocalStorage(){
 
                 elem.classList.add('active');
 
-                const productObjKids = {
+                const productObj = {
                     id: elem.dataset.id,
                     name: elem.dataset.name,
                     gender: datasetGender, 
@@ -55,7 +58,7 @@ export function addToCartLocalStorage(){
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];
-                products.push(productObjKids);
+                products.push(productObj);
                 localStorage.setItem('product', JSON.stringify(products));
 
                 elem.removeEventListener('click', click)
@@ -70,4 +73,5 @@ export function addToCartLocalStorage(){
   }
   
   addToCartLocalStorage();
+
 

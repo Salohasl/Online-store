@@ -49,6 +49,8 @@ function removePageLocalStorage(){
     basketBtn.setAttribute('data-name', page.name);
     basketBtn.setAttribute('data-description', page.desc);
     basketBtn.setAttribute('data-color', page.color);
+    
+
 
     let arr = page.size;
     for(let arrSize of arr){
@@ -57,8 +59,11 @@ function removePageLocalStorage(){
       buttonSize.setAttribute('data-id', page.id)
         if(arr == 'undefined'){
           buttonSize.textContent = '-';
+          buttonSize.style.backgroundColor = '#FFCF00';
+          basketBtn.setAttribute('data-size', '-')
         }else{
           buttonSize.textContent = arrSize;
+          basketBtn.setAttribute('data-size', '')
         }
       size.append(buttonSize);
 

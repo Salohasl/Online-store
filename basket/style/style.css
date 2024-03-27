@@ -187,7 +187,7 @@ header .link .search button {
   background-position: center;
   border-left: none;
 }
-header .link .bt img {
+header .link .bt img.active {
   filter: drop-shadow(1px 1px 1px rgb(255, 207, 0));
 }
 header .link button {

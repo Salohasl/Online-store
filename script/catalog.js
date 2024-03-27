@@ -91,17 +91,18 @@ function productUnloading(){
         let arr = productCatal.dataset.size.split(',');
         for(let arrSize of arr ){
           let buttonSize = document.createElement('button');
+          
           if(arrSize !== 'undefined'){
             buttonSize.textContent = arrSize;
             buttonSize.className = arrSize;
-            buttonSize.classList.add('size-button');
-            buttonSize.setAttribute('data-id', key.id);
+
           }else{
             buttonSize.textContent = '-';
             buttonSize.className = 'oneSize';
-            buttonSize.classList.add('size-button');
-            buttonSize.setAttribute('data-id', key.id);
+            buttonSize.classList.add('active');
           }
+          buttonSize.setAttribute('data-id', key.id);
+          buttonSize.classList.add('size-button');
           buttonBlock.append(buttonSize);
         }
         
@@ -113,6 +114,15 @@ function productUnloading(){
         basketBtn.setAttribute('data-description', key.description);
         basketBtn.setAttribute('data-id', key.id);
         basketBtn.setAttribute('data-color', key.color);
+        
+        for(let arrSize of arr){
+          if(arrSize !== 'undefined'){
+            basketBtn.setAttribute('data-size', '')
+          }else{
+            basketBtn.setAttribute('data-size', '-')
+          }
+        }
+    
         basketBtn.classList.add('basket-hover');
         productHover.append(basketBtn);
         let basketImg = document.createElement('img');
@@ -138,10 +148,10 @@ productUnloading();
 
 
 //Функция пагинация 
-function pagination(){
+export function pagination(listItems){
   const paginationNumbers = document.getElementById("pagination-numbers");
-  const paginatedList = document.getElementById("paginated-list");
-  const listItems = paginatedList.querySelectorAll(".product-catal");
+ // const paginatedList = document.getElementById("paginated-list");
+ // const listItems = paginatedList.querySelectorAll(".product-catal");
   const nextButton = document.getElementById("next-button");
   const prevButton = document.getElementById("prev-button");
 
@@ -239,7 +249,9 @@ function pagination(){
     });
   });
 }
-pagination();
+// Обновление DOM с отсортированным массивом
+
+pagination(document.querySelectorAll(".product-catal"));
 
 
 

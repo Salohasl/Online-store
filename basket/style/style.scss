@@ -174,7 +174,9 @@
       }
       .bt{
         img{
-          filter: drop-shadow(1px 1px 1px rgb(255,207,0));
+          &.active{
+            filter: drop-shadow(1px 1px 1px rgb(255,207,0));
+          }
         }
         
       }

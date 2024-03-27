@@ -61,121 +61,132 @@ function filterCatalog(){
              // Обновление интерфейса для отображения отфильтрованного списка продуктов
             filteredProducts.forEach(key => {
                 let productCatal = document.createElement('div');
-                productCatal.classList.add('product-catal');
-                productCatal.setAttribute('id', 'product-catal');
-                productCatal.setAttribute('data-category', key.category);
-                productCatal.setAttribute('data-pilot', key.pilot);
-                productCatal.setAttribute('data-size', key.size);
-                productCatal.setAttribute('data-command', key.command);
-                productCatal.setAttribute('data-name', key.name);
-                product.append(productCatal);
+      productCatal.classList.add('product-catal');
+      productCatal.setAttribute('id', 'product-catal');
+      productCatal.setAttribute('data-category', key.category);
+      productCatal.setAttribute('data-pilot', key.pilot);
+      productCatal.setAttribute('data-size', key.size);
+      productCatal.setAttribute('data-command', key.command);
+      productCatal.setAttribute('data-name', key.name);
+      product.append(productCatal);
+      
+
+
+
+      function creatingBlocks(){
+
+        let img = document.createElement('img');
+        img.src = key.src;
+        productCatal.append(img);
+      
+        let category = document.createElement('h4');
+        category.textContent = key.name
+        productCatal.append(category);
+
+        //создание div для центрирования описания и цены
+        let productPrice = document.createElement('div');
+        productPrice.classList.add('product-price');
+        productCatal.append(productPrice);
+
+        //описание
+        let description = document.createElement('p');
+        description.textContent = key.description;
+        productPrice.append(description);
+        //Цена
+        let price = document.createElement('p');
+        price.textContent = key.price;
+        productPrice.append(price);
+
+      }creatingBlocks();
         
+      //Создание блока поверх продукта с возможностью добавления в корзину
+      function creatingBlocksHover(){
+        let productHover = document.createElement('div');
+        productHover.classList.add('product-hover');
+        productHover.setAttribute('data-category', key.category);
+        productHover.setAttribute('data-pilot', key.pilot);
+        productHover.setAttribute('data-size', key.size);
+        productHover.setAttribute('data-command', key.command);
+        productHover.setAttribute('data-name', key.name);
+        productHover.setAttribute('data-gender', key.gender);
+        productHover.setAttribute('data-img', key.src);
+        productHover.setAttribute('data-img1', key.srcHover);
+        productHover.setAttribute('data-img2', key.img2);
+        productHover.setAttribute('data-img3', key.img);
+        productHover.setAttribute('data-color', key.color);
+        productHover.setAttribute('data-full', key.full);
+        productHover.setAttribute('data-id', key.id);
+        productHover.setAttribute('data-price', key.price);
+        productHover.setAttribute('data-desc', key.description);
+        productCatal.prepend(productHover);
+   
+        let imgHover = document.createElement('img');
+        imgHover.classList.add('img-hover');
+        imgHover.src = key.srcHover;
+        productHover.append(imgHover);
+
+        let category = document.createElement('h4');
+        category.textContent = key.name
+        productHover.append(category);
+
+        let size = document.createElement('p');
+        size.textContent = 'Размер';
+        productHover.append(size);
+
+        //Создание блока с кнопками размера
+        let buttonBlock = document.createElement('div');
+        buttonBlock.classList.add('button-block');
+        productHover.append(buttonBlock);
+        //кнопка размера
+        let arr = productCatal.dataset.size.split(',');
+        for(let arrSize of arr ){
+          let buttonSize = document.createElement('button');
+          
+          if(arrSize !== 'undefined'){
+            buttonSize.textContent = arrSize;
+            buttonSize.className = arrSize;
+
+          }else{
+            buttonSize.textContent = '-';
+            buttonSize.className = 'oneSize';
+            buttonSize.classList.add('active');
+          }
+          buttonSize.setAttribute('data-id', key.id);
+          buttonSize.classList.add('size-button');
+          buttonBlock.append(buttonSize);
+        }
         
+        //Создание корзины
+        let basketBtn = document.createElement('button');
+        basketBtn.setAttribute('data-gender', key.gender);
+        basketBtn.setAttribute('data-price', key.price);
+        basketBtn.setAttribute('data-name', key.name);
+        basketBtn.setAttribute('data-description', key.description);
+        basketBtn.setAttribute('data-id', key.id);
+        basketBtn.setAttribute('data-color', key.color);
         
-                function creatingBlocks(){
+        for(let arrSize of arr){
+          if(arrSize !== 'undefined'){
+            basketBtn.setAttribute('data-size', '')
+          }else{
+            basketBtn.setAttribute('data-size', '-')
+          }
+        }
+    
+        basketBtn.classList.add('basket-hover');
+        productHover.append(basketBtn);
+        let basketImg = document.createElement('img');
+        basketImg.src = '/icon/korzina.png';
+        basketBtn.append(basketImg);
+
+        const bt = document.querySelector('.bt img');
+
+        basketBtn.addEventListener('click', ()=>{
+          bt.classList.add('active');
+        })
         
-                let img = document.createElement('img');
-                img.src = key.src;
-                productCatal.append(img);
-                
-                let category = document.createElement('h4');
-                category.textContent = key.name
-                productCatal.append(category);
-        
-                //создание div для центрирования описания и цены
-                let productPrice = document.createElement('div');
-                productPrice.classList.add('product-price');
-                productCatal.append(productPrice);
-        
-                //описание
-                let description = document.createElement('p');
-                description.textContent = key.description;
-                productPrice.append(description);
-                //Цена
-                let price = document.createElement('p');
-                price.textContent = key.price;
-                productPrice.append(price);
-        
-                }creatingBlocks();
-                
-                //Создание блока поверх продукта с возможностью добавления в корзину
-                function creatingBlocksHover(){
-                let productHover = document.createElement('div');
-                productHover.classList.add('product-hover');
-                productHover.setAttribute('data-category', key.category);
-                productHover.setAttribute('data-pilot', key.pilot);
-                productHover.setAttribute('data-size', key.size);
-                productHover.setAttribute('data-command', key.command);
-                productHover.setAttribute('data-name', key.name);
-                productHover.setAttribute('data-gender', key.gender);
-                productHover.setAttribute('data-img', key.src);
-                productHover.setAttribute('data-img1', key.srcHover);
-                productHover.setAttribute('data-img2', key.img2);
-                productHover.setAttribute('data-img3', key.img);
-                productHover.setAttribute('data-color', key.color);
-                productHover.setAttribute('data-full', key.full);
-                productHover.setAttribute('data-id', key.id);
-                productHover.setAttribute('data-price', key.price);
-                productHover.setAttribute('data-desc', key.description);
-                productCatal.prepend(productHover);
-                    
-                let imgHover = document.createElement('img');
-                imgHover.classList.add('img-hover');
-                imgHover.src = key.srcHover;
-                productHover.append(imgHover);
-        
-                let category = document.createElement('h4');
-                category.textContent = key.name
-                productHover.append(category);
-        
-                let size = document.createElement('p');
-                size.textContent = 'Размер';
-                productHover.append(size);
-        
-                //Создание блока с кнопками размера
-                let buttonBlock = document.createElement('div');
-                buttonBlock.classList.add('button-block');
-                productHover.append(buttonBlock);
-                //кнопка размера
-                let arr = productCatal.dataset.size.split(',');
-                for(let arrSize of arr ){
-                    let buttonSize = document.createElement('button');
-                    if(arrSize !== 'undefined'){
-                    buttonSize.textContent = arrSize;
-                    buttonSize.className = arrSize;
-                    buttonSize.classList.add('size-button');
-                    buttonSize.setAttribute('data-id', key.id);
-                    }else{
-                    buttonSize.textContent = '-';
-                    buttonSize.className = 'oneSize';
-                    buttonSize.classList.add('size-button');
-                    buttonSize.setAttribute('data-id', key.id);
-                    }
-                    buttonBlock.append(buttonSize);
-                }
-                
-                //Создание корзины
-                let basketBtn = document.createElement('button');
-                basketBtn.setAttribute('data-gender', key.gender);
-                basketBtn.setAttribute('data-price', key.price);
-                basketBtn.setAttribute('data-name', key.name);
-                basketBtn.setAttribute('data-description', key.description);
-                basketBtn.setAttribute('data-id', key.id);
-                basketBtn.setAttribute('data-color', key.color);
-                basketBtn.classList.add('basket-hover');
-                productHover.append(basketBtn);
-                let basketImg = document.createElement('img');
-                basketImg.src = '/icon/korzina.png';
-                basketBtn.append(basketImg);
-        
-                const bt = document.querySelector('.bt img');
-        
-                basketBtn.addEventListener('click', ()=>{
-                    bt.classList.add('active');
-                })
-                
-        
-                }creatingBlocksHover()
+
+      }creatingBlocksHover()
             });
 
             addPage();

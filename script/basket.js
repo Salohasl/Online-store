@@ -5,13 +5,20 @@ import catalogAston from './arrCatalog.js';
 let productAstons  = catalogAston;
 const paymentPrice = document.querySelector('.payment-price');
 
+const basketIcon = document.querySelector('.bt img');
 
 
 function removeToCartLocalStorage() {
     const table = document.querySelector('table');
     let productCatalog = JSON.parse(localStorage.getItem('product')) || []; // Инициализация пустым массивом, если в localStorage нет данных
     let savedProduct = [...productCatalog];
-      
+
+    if(savedProduct.length != 0){
+        basketIcon.classList.add('active');
+    }else{
+        basketIcon.classList.remove('active');
+    }
+
     let num;
     for (let product of savedProduct) {
         let tr = document.createElement('tr');
@@ -84,7 +91,7 @@ function removeToCartLocalStorage() {
             let span = document.createElement('span');
             close.append(span);
         }
-
+        
 
         close.addEventListener('click', () => {
             tr.remove();
@@ -102,6 +109,12 @@ function removeToCartLocalStorage() {
             // Обновляем общую сумму
             num = td2.textContent.slice(0, -1);
             paymentPrice.textContent = Number(paymentPrice.textContent) - Number(num);
+
+            if(paymentPrice.textContent != 0){
+                basketIcon.classList.add('active');
+            }else{
+                basketIcon.classList.remove('active');
+            }
         });
 
         num = td2.textContent.slice(0, -1);

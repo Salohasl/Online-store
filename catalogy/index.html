@@ -12,11 +12,15 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="icon" href="/icon/logo.png" type="image/svg+xml">
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>   
 <link rel="stylesheet" href="/catalogy/style/style.css">
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 <header>
+  <div id="preloader">
+    <div class="dws-progress-bar"></div>
+  </div>
   <div class="menuBtn">
     <span></span>
     <span></span>
@@ -25,14 +29,17 @@
  
   <nav>
     <ul>
-      <a href="/catalogy/index.html" class="active" onmouseover="popupText()"><li>Каталог</li></a>
-      <div class="link">
-        <a href="/catalogy/man-collection/index.html">-Мужское</a>
-        <a href="/catalogy/women-collection/index.html">-Женское</a>
-        <a href="/catalogy/kids-collection/index.html">-Детское</a>
-        <a href="#">-Для дома</a>
-        <a href="#">-Аксессуары</a>
+      <div class="link-muose">
+        <a href="/catalogy/index.html" class="active"><li>Каталог</li></a>
+        <div class="link">
+          <a href="/catalogy/man-collection/index.html">-Мужское</a>
+          <a href="/catalogy/women-collection/index.html">-Женское</a>
+          <a href="/catalogy/kids-collection/index.html">-Детское</a>
+          <a href="#">-Для дома</a>
+          <a href="#">-Аксессуары</a>
+        </div>
       </div>
+      
       <a href="/piloе-collection/index.html"><li>Коллекция пилотов</li></a>
       <a href="/command-collection/index.html"><li>Коллекция команд</li></a>
       <a href="#"><li>Спецпредложения</li></a>
@@ -58,14 +65,7 @@
 </header>
 
 <body>
-  <div class="preloader">
-    <svg class="preloader__image"  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-      <path fill="currentColor"
-        d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z">
-      </path>
-    </svg>
-    <h3 id="progress-bar">Загрузка товара</h3>
-  </div>
+ 
 
   <main>
 
@@ -78,8 +78,19 @@
             <a href="/catalogy/index.html"><li>/ Каталог</li></a>
           </ul>
         </div>
+        
     </div>
     <div class="catalogy">
+      <div class="sort">
+        <p class="showSort">Сортировка :</p>
+        <div class="sort-item">
+          <ul class="sort-list">
+            <li class="btnSort asc">По возрастанию <br> цены</li>
+            <li class="btnSort desc">По убыванию <br> цены</li>
+            <li class="btnSort">Сначала новинки</li>
+          </ul>
+        </div>
+      </div>
         <div class="filter-btn" id="filter-btn">
           <div class="filter-btn__span">
             <div class="circle"></div>
@@ -297,16 +308,11 @@
     </div>
   </div>
   </footer>
+
+  <script src="/js/plugin.js"></script>
+  <script src="/js/script.js"></script>
   <script src="/feedback/js/form-processing.js"></script>
   <script>
-
-    window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-    }, 500);
-}
 
     /*
       attachMaxItems: 3,
@@ -336,6 +342,7 @@
 <script type="module" src="/script/localStorage.js"></script>
 <script type="module" src="/script/addPage.js"></script>
 <script type="module" src="/script/sortirovka.js"></script>
+<script type="module" src="/script/filter.js"></script>
 <script type="module" src="/script/fuse.js"></script>
 <script src="/script/up.js"></script>
 <script  src="/script/showFilter.js"></script>

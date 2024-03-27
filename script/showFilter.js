@@ -8,6 +8,20 @@ function showFilter(){
 }
 showFilter();
 
+function showSort(){
+    let showSort = document.querySelector('.sort');
+    let showList = document.querySelector('.sort-list');
+
+    showSort.addEventListener('mouseover', ()=>{
+        showList.classList.add('active');
+    })
+    showSort.addEventListener('mouseout', ()=>{
+        showList.classList.remove('active');
+    })
+
+}
+showSort();
+
 function shadowButton(){
     const sizeBtn = document.querySelectorAll('.sizeBtn');
     sizeBtn.forEach(elem => {

@@ -1,23 +1,28 @@
-function addToCartLocalStorage(){
-    const bt = document.querySelector('.bt img');
 
-    let basketBtn = document.querySelector('.basket-hover');
-    
+function addToCartLocalStorage(){
+
+    let basketBtn = document.querySelectorAll('.basket-hover');
+
     let sizeButton = document.querySelectorAll('.size-button');
+
+    const bt = document.querySelector('.bt img');
 
     sizeButton.forEach(btn => {
         btn.addEventListener('click', ()=>{
-            for(let btnElem of sizeButton){
-                if(btnElem != btn){
-                    btnElem.classList.remove('active');
-                }
-                btn.classList.add('active');
+           
+
+            for(let elem of basketBtn){
+                if(btn.dataset.id == elem.dataset.id){
+                    elem.dataset.size = btn.textContent;
+                    btn.classList.add('active');
+                    for(let btnElem of sizeButton){
+                        if(btnElem != btn && btnElem.textContent != '-'){
+                            btnElem.classList.remove('active');
+                        }
+                    
+                    }
+                }           
             }
-
-            if(btn.dataset.id == basketBtn.dataset.id){
-                basketBtn.setAttribute('data-size', btn.textContent)  
-            }           
-
 
         })
     })
@@ -26,41 +31,40 @@ function addToCartLocalStorage(){
 
     let datasetGender;
 
+    basketBtn.forEach(elem => {
+        elem.addEventListener('click', function click() {
 
 
-        basketBtn.addEventListener('click', function click(event) {
-
-            if(basketBtn.dataset.size === undefined){
+            if(elem.dataset.size === ''){
                 alert('Пожалуйста выберите размер')
             }else{
 
-               
                 bt.classList.add('active');
 
-                if(basketBtn.dataset.gender !== 'undefined'){
-                    datasetGender = basketBtn.dataset.gender;
+                if(elem.dataset.gender !== 'undefined'){
+                    datasetGender = elem.dataset.gender;
                 }else{
                     datasetGender = 'Унисекс';
                 }
 
 
-                basketBtn.classList.add('active');
+                elem.classList.add('active');
 
-                const productObjPage = {
-                    id: basketBtn.dataset.id,
-                    name: basketBtn.dataset.name,
+                const productObj = {
+                    id: elem.dataset.id,
+                    name: elem.dataset.name,
                     gender: datasetGender, 
-                    description: basketBtn.dataset.description,
-                    price: basketBtn.dataset.price,
-                    size: basketBtn.dataset.size,
-                    color: basketBtn.dataset.color
+                    description: elem.dataset.description,
+                    price: elem.dataset.price,
+                    size: elem.dataset.size,
+                    color: elem.dataset.color
                 }
                 
                 let products = JSON.parse(localStorage.getItem('product')) || [];
-                products.push(productObjPage);
+                products.push(productObj);
                 localStorage.setItem('product', JSON.stringify(products));
 
-                basketBtn.removeEventListener('click', click)
+                elem.removeEventListener('click', click)
 
                 alert('Товар добавлен');
             }
@@ -68,10 +72,7 @@ function addToCartLocalStorage(){
             
             
         })
+    })
   }
   
   addToCartLocalStorage();
-
-
-
-  //По клику на размер добавлять в атрибут кнопки корзины и сохранять в локалке

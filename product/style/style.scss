@@ -364,18 +364,16 @@
     
   }
   .page-content{
-    
+    padding-top: 50px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 100px;
+    
     
 .rotate{
-    width: 100% ;
+  width: 50%;
     transform: rotate(90deg);
-    margin-top: 50px;
-    display: flex;
     .div-img{
       display: flex;
       flex-direction: column;
@@ -394,13 +392,11 @@
 }
     
     .mySwiper{
-      width: 130%;
-      height: 650px;
-      margin-top: -160px;
+      width: 70%;
       img{
-        display: block;
-        width: 80%;
-        height: 70%;
+        
+        width: 350px;
+        height: 450px;
         object-fit: cover;
       }
       .swiper-slide {
@@ -426,7 +422,6 @@
       align-items: flex-start;
       margin-left: 20px;
       h2{
-        margin-top: -70px;
         margin-bottom: 10px;
         font-weight: 300;
       }
@@ -541,18 +536,19 @@
       margin-bottom: 10px;
     }
     .swiper {
-      width: 100%;
+      width: 90%;
       height: 300px;
     }
 
     .swiper-slide {
-      width: 100%;
+      width: 90%;
       margin-top: 20px;
       font-size: 12px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       a{
         text-decoration: none;
         color: white;

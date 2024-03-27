@@ -375,17 +375,15 @@ main .merch-link ul a:hover {
   margin-top: 20px;
 }
 .page .page-content {
+  padding-top: 50px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 100px;
 }
 .page .page-content .rotate {
-  width: 100%;
+  width: 50%;
   transform: rotate(90deg);
-  margin-top: 50px;
-  display: flex;
 }
 .page .page-content .rotate .div-img {
   display: flex;
@@ -405,14 +403,11 @@ main .merch-link ul a:hover {
   display: none;
 }
 .page .page-content .mySwiper {
-  width: 130%;
-  height: 650px;
-  margin-top: -160px;
+  width: 70%;
 }
 .page .page-content .mySwiper img {
-  display: block;
-  width: 80%;
-  height: 70%;
+  width: 350px;
+  height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -436,7 +431,6 @@ main .merch-link ul a:hover {
   margin-left: 20px;
 }
 .page .page-content .page-content__description h2 {
-  margin-top: -70px;
   margin-bottom: 10px;
   font-weight: 300;
 }
@@ -546,17 +540,18 @@ main .merch-link ul a:hover {
   margin-bottom: 10px;
 }
 .page .recommen .swiper {
-  width: 100%;
+  width: 90%;
   height: 300px;
 }
 .page .recommen .swiper-slide {
-  width: 100%;
+  width: 90%;
   margin-top: 20px;
   font-size: 12px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .page .recommen .swiper-slide a {
   text-decoration: none;
